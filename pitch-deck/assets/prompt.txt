@@ -1,0 +1,8 @@
+Use case: stylized-concept
+Asset type: wide 16:9 pitch-deck problem-slide bitmap
+Primary request: An editorial conceptual image of hackathon knowledge fading after the event: three clean floating translucent project-document sheets, each with tiny abstract code/data marks and a circular builder portrait, dissolving into a fine grey dot cloud.
+Scene/backdrop: Empty off-white #F8F8F5 background with extensive negative space.
+Style/medium: Sophisticated minimal monochrome editorial art, flat gallery-quality render with crisp, subtle depth.
+Composition/framing: Wide 16:9; right-weighted composition; sheets gently staggered and dissolving toward the far right.
+Color palette: Soft off-white, charcoal/grey, with a restrained subtle sage-green accent only.
+Constraints: No readable text, no logos, no title, no UI cards, no extra objects, no watermark.
