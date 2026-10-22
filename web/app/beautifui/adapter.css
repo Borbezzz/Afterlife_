@@ -1,0 +1,111 @@
+/*
+ * Beautiful UI adapter (hand-written, not from the registry).
+ *
+ * `npx shadcn@latest add @beautifui/<item>` drops the full Beautiful UI
+ * foundation into ./foundation.css. We do NOT import that file: it re-imports
+ * tailwindcss, needs the `shadow-plugin` package, redefines shadcn's
+ * `--accent`, `--font-sans`/`--font-mono` and the `dark` variant, and sets
+ * global html/body/a/p rules. Any of those would override the neutral shadcn
+ * theme in globals.css.
+ *
+ * This file carries only the non-conflicting subset Beautiful UI primitives
+ * need: their own token names (ink/line/surface/...), radii, easings, layered
+ * shadows and the keyframes they reference by name. `--accent` is left to
+ * shadcn; Beautiful UI's blue accent is available as accent-ink/accent-tint.
+ * Light theme only for now.
+ */
+
+:root {
+  --page: oklch(0.985 0.001 286.376);
+  --canvas: oklch(0.961 0.002 247.84);
+  --surface: oklch(1 0 0);
+  --inset: oklch(0.979 0.002 247.839);
+  --hover: oklch(0.97 0.002 247.839);
+  --hover-2: oklch(0.933 0.003 247.86);
+
+  --ink: oklch(0.247 0.006 258.361);
+  --ink-2: oklch(0.506 0.01 264.477);
+  --ink-3: oklch(0.695 0.009 264.505);
+
+  --line: oklch(0.946 0.003 264.542);
+  --line-strong: oklch(0.912 0.005 258.326);
+  --line-soft: oklch(0.966 0.002 264.542);
+  --field: oklch(0.961 0.001 286.375);
+
+  --accent-ink: oklch(0.556 0.187 255.617);
+  --accent-tint: oklch(0.96 0.019 252.878);
+
+  --green: oklch(0.603 0.155 150.883);
+  --green-tint: oklch(0.958 0.017 159.118);
+  --orange: oklch(0.689 0.179 49.902);
+  --orange-tint: oklch(0.964 0.021 67.581);
+  --red: oklch(0.621 0.192 23.042);
+  --red-tint: oklch(0.956 0.017 17.462);
+
+  /* layered shadows (stand-ins for shadow-plugin's xs..lg stacks) */
+  --bui-shadow-xs: 0 1px 1px oklch(0 0 0 / 0.03), 0 1px 2px oklch(0 0 0 / 0.04);
+  --bui-shadow-sm: 0 1px 1px oklch(0 0 0 / 0.03), 0 2px 4px oklch(0 0 0 / 0.04);
+  --bui-shadow-md: 0 1px 2px oklch(0 0 0 / 0.04), 0 4px 8px oklch(0 0 0 / 0.05), 0 8px 16px oklch(0 0 0 / 0.04);
+  --bui-shadow-lg: 0 2px 4px oklch(0 0 0 / 0.04), 0 8px 16px oklch(0 0 0 / 0.06), 0 16px 32px oklch(0 0 0 / 0.06);
+
+  --shadow-hairline: 0 0 0 1px var(--line);
+  --shadow-btn: 0 0 0 1px var(--line-strong), var(--bui-shadow-xs);
+  --shadow-card: 0 0 0 1px var(--line), var(--bui-shadow-sm);
+  --shadow-raised: 0 0 0 1px var(--line), var(--bui-shadow-md);
+  --shadow-overlay: 0 0 0 1px var(--line), var(--bui-shadow-lg);
+  --shadow-inset-field: inset 0 1px 2px oklch(0 0 0 / 0.12);
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-inset: var(--inset);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-hover: var(--hover);
+  --color-hover-2: var(--hover-2);
+  --color-field: var(--field);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-tint: var(--accent-tint);
+  --color-green: var(--green);
+  --color-green-tint: var(--green-tint);
+  --color-orange: var(--orange);
+  --color-orange-tint: var(--orange-tint);
+  --color-red: var(--red);
+  --color-red-tint: var(--red-tint);
+
+  --shadow-hairline: var(--shadow-hairline);
+  --shadow-btn: var(--shadow-btn);
+  --shadow-inset-field: var(--shadow-inset-field);
+  --shadow-card: var(--shadow-card);
+  --shadow-raised: var(--shadow-raised);
+  --shadow-overlay: var(--shadow-overlay);
+
+  --radius-chip: 6px;
+  --radius-control: 8px;
+  --radius-card: 10px;
+  --radius-window: 14px;
+
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-link: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes eq-bounce {
+  0%, 100% { transform: scaleY(0.35); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

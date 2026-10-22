@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Afterlife Mockups</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--sp-5); }
+  .shot { display: flex; flex-direction: column; color: var(--text-1); padding: 0; overflow: hidden; }
+  .shot:hover { text-decoration: none; border-color: var(--accent-line); box-shadow: var(--glow-accent); }
+  .shot__body { padding: var(--sp-4) var(--sp-5) var(--sp-5); display: flex; flex-direction: column; gap: var(--sp-2); }
+  .shot__n { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--accent); }
+  .shot__desc { font-size: var(--fs-14); color: var(--text-2); }
+  .thumb { position: relative; height: 170px; background: radial-gradient(400px 200px at 50% 50%, var(--bg-map-core), var(--bg-0)); border-bottom: 1px solid var(--line); overflow: hidden; }
+  .thumb--page { background: var(--bg-0); padding: var(--sp-4); display: flex; flex-direction: column; gap: 6px; }
+  .t-star { position: absolute; border-radius: 50%; }
+  .t-star--a { background: var(--alive); box-shadow: var(--glow-alive); }
+  .t-star--d { background: var(--dormant); box-shadow: var(--glow-dormant); }
+  .t-star--x { background: var(--dead-node); }
+  .t-star--u { background: var(--unknown-node); }
+  .t-panel { position: absolute; top: 12px; right: 12px; bottom: 12px; width: 38%; background: var(--bg-glass); border: 1px solid var(--line); border-radius: var(--r-md); padding: 8px; display: flex; flex-direction: column; gap: 5px; }
+  .t-bar { height: 6px; border-radius: 3px; background: var(--bg-3); }
+  .t-bar--accent { background: var(--accent); }
+  .t-bar--alive { background: var(--alive); }
+  .t-bar--dormant { background: var(--dormant); }
+  .t-bar--dead { background: var(--dead); }
+  .t-bar--failed { background: var(--failed); }
+  .t-bar--zero { background: var(--sp-zero); }
+  .t-prompt { position: absolute; left: 12px; right: 44%; bottom: 14px; height: 16px; border-radius: var(--r-pill); border: 1px solid var(--accent-line); background: var(--bg-glass); }
+  .t-row { display: flex; gap: 6px; align-items: center; }
+  .t-card { flex: 1; border: 1px solid var(--line); background: var(--bg-1); border-radius: var(--r-sm); padding: 6px; display: flex; flex-direction: column; gap: 4px; }
+  .principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--sp-4); margin-top: var(--sp-10); }
+  .swatches { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+  .sw { display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: var(--fs-11); color: var(--text-2); }
+  .sw i { width: 14px; height: 14px; border-radius: var(--r-xs); border: 1px solid var(--line-strong); }
+</style>
+</head>
+<body class="starfield">
+
+<header class="topnav">
+  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"></span>Afterlife <span class="brand__event">Mockups · 22 Oct 2026</span></a>
+  <nav class="tabs" aria-label="Primary">
+    <a class="tab" href="01-star-map.html">Explore</a>
+    <a class="tab" href="03-before-you-build.html">Before you build</a>
+    <a class="tab" href="05-speaker-finder.html">Speakers</a>
+    <a class="tab" href="04-intro-draft.html">Intros <span class="tab__count">3</span></a>
+    <a class="tab" href="07-agent-log.html">Agent log</a>
+  </nav>
+  <div class="topnav__right">
+    <a class="btn btn--sm" href="06-claim-profile.html">Claim<span class="hide-sm">&nbsp;profile</span></a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="page__head">
+    <div>
+      <span class="eyebrow">Design mockups · static HTML · sample data</span>
+      <h1>Afterlife screens</h1>
+      <p class="lead">Seven screens, one shared <code>tokens.css</code>. The event ends, the community's work continues. Every name and number here is sample data.</p>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <a class="card shot" href="01-star-map.html">
+      <div class="thumb" aria-hidden="true">
+        <span class="t-star t-star--a" style="left: 18%; top: 30%; width: 8px; height: 8px"></span>
+        <span class="t-star t-star--x" style="left: 30%; top: 60%; width: 6px; height: 6px"></span>
+        <span class="t-star t-star--d" style="left: 42%; top: 40%; width: 6px; height: 6px"></span>
+        <span class="t-star t-star--u" style="left: 24%; top: 75%; width: 5px; height: 5px"></span>
+        <span class="t-star t-star--a" style="left: 48%; top: 22%; width: 5px; height: 5px"></span>
+        <span class="t-star t-star--x" style="left: 10%; top: 50%; width: 4px; height: 4px"></span>
+        <div class="t-panel"><div class="t-bar" style="width: 60%"></div><div class="t-bar"></div><div class="t-bar" style="width: 80%"></div><div class="t-bar t-bar--accent" style="width: 70%"></div><div class="t-bar" style="width: 70%"></div></div>
+        <div class="t-prompt"></div>
+      </div>
+      <div class="shot__body"><span class="shot__n">01</span><h3>Star map: explore</h3><p class="shot__desc">Full-bleed 3D star field with liveness colours, topic-axis lens picker, filters, prompt bar and the agent's narrated fly-to answer.</p></div>
+    </a>
+
+    <a class="card shot" href="02-project-panel.html">
+      <div class="thumb" aria-hidden="true">
+        <span class="t-star t-star--a" style="left: 26%; top: 45%; width: 14px; height: 14px"></span>
+        <span class="t-star t-star--x" style="left: 12%; top: 25%; width: 4px; height: 4px; opacity: .5"></span>
+        <span class="t-star t-star--d" style="left: 40%; top: 70%; width: 4px; height: 4px; opacity: .5"></span>
+        <div class="t-panel" style="width: 46%"><div class="t-bar t-bar--alive" style="width: 30%"></div><div class="t-bar" style="width: 55%; height: 10px"></div><div class="t-bar"></div><div class="t-row"><div class="t-bar" style="flex: 1"></div><div class="t-bar" style="flex: 1"></div></div><div class="t-bar" style="width: 80%"></div><div class="t-row" style="margin-top: auto"><div class="t-bar t-bar--accent" style="flex: 1"></div><div class="t-bar t-bar--zero" style="flex: 1"></div></div></div>
+      </div>
+      <div class="shot__body"><span class="shot__n">02</span><h3>Project panel</h3><p class="shot__desc">Node detail over the map: event, built-with, liveness and why, team with evidence chips, and Draft intro / Send to Zero / Shortlist.</p></div>
+    </a>
+
+    <a class="card shot" href="03-before-you-build.html">
+      <div class="thumb thumb--page" aria-hidden="true">
+        <div class="t-row" style="align-items: stretch; flex: 1"><div class="t-card" style="flex: 0 0 34%"><div class="t-bar" style="height: 30px"></div><div class="t-bar t-bar--accent" style="width: 50%"></div></div>
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 5px"><div class="t-card"><div class="t-row"><div class="t-bar t-bar--alive" style="flex: 3"></div><div class="t-bar t-bar--alive" style="flex: 1"></div><div class="t-bar" style="flex: 1"></div></div></div><div class="t-card"><div class="t-row"><div class="t-bar t-bar--dead" style="flex: 2"></div><div class="t-bar" style="flex: 3"></div></div></div><div class="t-card"><div class="t-row"><div class="t-bar t-bar--dormant" style="flex: 4"></div><div class="t-bar" style="flex: 1"></div></div></div></div></div>
+      </div>
+      <div class="shot__body"><span class="shot__n">03</span><h3>Before you build</h3><p class="shot__desc">Paste an idea, get the 5 closest prior projects, how far each got, where it stopped and who to message.</p></div>
+    </a>
+
+    <a class="card shot" href="04-intro-draft.html">
+      <div class="thumb thumb--page" aria-hidden="true">
+        <div class="t-row" style="align-items: stretch; flex: 1"><div class="t-card" style="flex: 0 0 18%"><div class="t-bar t-bar--accent"></div><div class="t-bar"></div><div class="t-bar"></div></div>
+          <div class="t-card"><div class="t-bar t-bar--zero" style="width: 60%"></div><div class="t-bar"></div><div class="t-bar"></div><div class="t-bar" style="width: 70%"></div><div class="t-bar t-bar--alive" style="margin-top: auto"></div></div>
+          <div class="t-card" style="flex: 0 0 26%"><div class="t-bar t-bar--accent" style="width: 40%"></div><div class="t-bar"></div><div class="t-bar"></div><div class="t-bar"></div></div></div>
+      </div>
+      <div class="shot__body"><span class="shot__n">04</span><h3>Intro draft</h3><p class="shot__desc">Grok-drafted intro with cited evidence, warm-intro path from Zero (or a labelled cold draft), and a Send to Zero that only creates a draft.</p></div>
+    </a>
+
+    <a class="card shot" href="05-speaker-finder.html">
+      <div class="thumb thumb--page" aria-hidden="true">
+        <div class="t-card" style="flex: 0 0 auto"><div class="t-row"><div class="t-bar" style="flex: 4"></div><div class="t-bar t-bar--accent" style="flex: 1"></div></div></div>
+        <div class="t-row" style="align-items: stretch; flex: 1"><div class="t-card"><div class="t-bar"></div><div class="t-bar"></div><div class="t-bar"></div><div class="t-bar"></div><div class="t-bar"></div></div><div class="t-card" style="flex: 0 0 28%"><div class="t-bar"></div><div class="t-bar"></div><div class="t-bar t-bar--accent" style="margin-top: auto"></div></div></div>
+      </div>
+      <div class="shot__body"><span class="shot__n">05</span><h3>Speaker finder</h3><p class="shot__desc">Topic in, ranked shortlist out, evidence chips per name, hidden people excluded, Export to Notion.</p></div>
+    </a>
+
+    <a class="card shot" href="06-claim-profile.html">
+      <div class="thumb thumb--page" aria-hidden="true" style="align-items: center">
+        <div class="t-card" style="width: 60%; flex: 0 0 auto"><div class="t-bar t-bar--alive" style="width: 40%"></div></div>
+        <div class="t-card" style="width: 60%; flex: 0 0 auto"><div class="t-bar"></div><div class="t-bar"></div></div>
+        <div class="t-card" style="width: 60%; flex: 0 0 auto"><div class="t-row"><div class="t-bar" style="flex: 1"></div><div class="t-bar t-bar--accent" style="width: 18px"></div></div><div class="t-row"><div class="t-bar" style="flex: 1"></div><div class="t-bar t-bar--accent" style="width: 18px"></div></div></div>
+      </div>
+      <div class="shot__body"><span class="shot__n">06</span><h3>Claim your profile</h3><p class="shot__desc">Sign in with GitHub via Supabase Auth, confirm or hide yourself, answer 3 questions, set consent toggles.</p></div>
+    </a>
+
+    <a class="card shot" href="07-agent-log.html">
+      <div class="thumb thumb--page" aria-hidden="true">
+        <div class="t-row"><div class="t-card"><div class="t-bar"></div></div><div class="t-card"><div class="t-bar t-bar--alive"></div></div><div class="t-card"><div class="t-bar t-bar--dormant"></div></div><div class="t-card"><div class="t-bar t-bar--failed"></div></div></div>
+        <div class="t-card" style="flex: 1"><div class="t-row"><div class="t-bar" style="flex: 2"></div><div class="t-bar t-bar--dormant" style="flex: 1"></div><div class="t-bar" style="flex: 3"></div></div><div class="t-row"><div class="t-bar" style="flex: 2"></div><div class="t-bar t-bar--failed" style="flex: 1"></div><div class="t-bar" style="flex: 3"></div></div><div class="t-row"><div class="t-bar" style="flex: 2"></div><div class="t-bar t-bar--alive" style="flex: 1"></div><div class="t-bar" style="flex: 3"></div></div><div class="t-row"><div class="t-bar" style="flex: 2"></div><div class="t-bar t-bar--failed" style="flex: 1"></div><div class="t-bar" style="flex: 3"></div></div></div>
+      </div>
+      <div class="shot__body"><span class="shot__n">07</span><h3>Agent log</h3><p class="shot__desc">The <code>agent_runs</code> log: ok / partial / failed, real error text, how each failure was handled, data coverage.</p></div>
+    </a>
+  </div>
+
+  <section class="principles" aria-label="System at a glance">
+    <div class="card stack">
+      <span class="eyebrow">Liveness</span>
+      <div class="row row--wrap"><span class="live live--alive">alive</span><span class="live live--dormant">dormant</span><span class="live live--dead">dead</span><span class="live live--unknown">unknown</span></div>
+      <p class="t-sm t-3">Colour plus shape: solid, amber, dashed ring, dotted "?". Never colour alone.</p>
+    </div>
+    <div class="card stack">
+      <span class="eyebrow">Evidence & sources</span>
+      <div class="chips"><span class="chip chip--devpost"><span class="chip__src">Devpost</span>Winner</span><span class="chip chip--github"><span class="chip__src">GitHub</span>★ 214</span><span class="chip chip--hn"><span class="chip__src">HN</span>86 pts</span><span class="chip chip--luma"><span class="chip__src">Luma</span>Host</span></div>
+      <div class="row row--wrap"><span class="via via--zero">via Zero</span><span class="via via--cognee">via Cognee</span><span class="via via--grok">Grok</span><span class="via via--supabase">Supabase</span><span class="via via--notion">Notion</span></div>
+    </div>
+    <div class="card stack">
+      <span class="eyebrow">Palette</span>
+      <div class="swatches">
+        <span class="sw"><i style="background: var(--bg-0)"></i>bg-0</span>
+        <span class="sw"><i style="background: var(--bg-1)"></i>bg-1</span>
+        <span class="sw"><i style="background: var(--bg-2)"></i>bg-2</span>
+        <span class="sw"><i style="background: var(--accent)"></i>accent</span>
+        <span class="sw"><i style="background: var(--alive)"></i>alive</span>
+        <span class="sw"><i style="background: var(--dormant)"></i>dormant</span>
+        <span class="sw"><i style="background: var(--dead)"></i>dead</span>
+        <span class="sw"><i style="background: var(--unknown)"></i>unknown</span>
+        <span class="sw"><i style="background: var(--failed)"></i>failed</span>
+      </div>
+      <p class="t-sm t-3">Space Grotesk for UI, JetBrains Mono for data. See README.md for the full token list.</p>
+    </div>
+  </section>
+</main>
+</body>
+</html>

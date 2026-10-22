@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Afterlife · Agent log</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  .page { max-width: 1320px; }
+  .stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-3); margin-bottom: var(--sp-6); }
+  .stats .card { padding: var(--sp-4); }
+  .toolbar { display: flex; gap: var(--sp-3); align-items: center; flex-wrap: wrap; margin-bottom: var(--sp-4); }
+  .toolbar .input { width: 260px; }
+  .toolbar .select { width: 170px; }
+  .run__id { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--text-3); white-space: nowrap; }
+  .run__time { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--text-2); white-space: nowrap; }
+  .run__kind { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--text-1); white-space: nowrap; }
+  .run__input { color: var(--text-2); max-width: 30ch; }
+  .run__err { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--failed); }
+  .run__err--partial { color: var(--partial); }
+  .run__handled { font-size: var(--fs-13); color: var(--text-2); max-width: 38ch; }
+  .trace { padding: var(--sp-4) var(--sp-5) var(--sp-5); }
+  .trace__steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--sp-2); font-family: var(--font-mono); font-size: var(--fs-12); }
+  .trace__steps li { display: grid; grid-template-columns: 64px 90px 1fr; gap: var(--sp-3); align-items: baseline; color: var(--text-2); }
+  .trace__steps .t-3 { font-size: var(--fs-11); }
+  .trace-row td { background: var(--bg-0); }
+  .honest { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); margin-top: var(--sp-8); }
+  @media (max-width: 1000px) { .stats { grid-template-columns: repeat(3, 1fr); } .honest { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .toolbar .input, .toolbar .select { width: 100%; }
+    .trace__steps li { grid-template-columns: 1fr; gap: 0; }
+  }
+</style>
+</head>
+<body class="starfield">
+
+<header class="topnav">
+  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"></span>Afterlife <span class="brand__event">London builders · 312 projects</span></a>
+  <nav class="tabs" aria-label="Primary">
+    <a class="tab" href="01-star-map.html">Explore</a>
+    <a class="tab" href="03-before-you-build.html">Before you build</a>
+    <a class="tab" href="05-speaker-finder.html">Speakers</a>
+    <a class="tab" href="04-intro-draft.html">Intros <span class="tab__count">3</span></a>
+    <a class="tab" href="07-agent-log.html" aria-current="page">Agent log</a>
+  </nav>
+  <div class="topnav__right">
+    <a class="btn btn--sm" href="06-claim-profile.html">Claim<span class="hide-sm">&nbsp;profile</span></a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="page__head">
+    <div>
+      <span class="eyebrow">agent_runs</span>
+      <h1>What the agent tried, and where it failed</h1>
+      <p class="lead">Every ingest step, search, intro draft and export is logged here, including bad matches and missing data. Nothing is hidden or retried silently.</p>
+    </div>
+    <span class="via via--supabase">Realtime · updating</span>
+  </div>
+
+  <section class="stats" aria-label="Last 24 hours">
+    <div class="card stat"><span class="stat__value">1,284</span><span class="stat__label">runs · last 24h</span></div>
+    <div class="card stat"><span class="stat__value" style="color: var(--ok)">1,197</span><span class="stat__label">ok</span></div>
+    <div class="card stat"><span class="stat__value" style="color: var(--partial)">61</span><span class="stat__label">partial</span></div>
+    <div class="card stat"><span class="stat__value" style="color: var(--failed)">26</span><span class="stat__label">failed</span></div>
+    <div class="card stat"><span class="stat__value">3</span><span class="stat__label">GitHub rate-limit hits</span></div>
+  </section>
+
+  <div class="toolbar" role="search">
+    <div class="seg" role="group" aria-label="Status">
+      <button class="seg__opt" aria-pressed="true">All</button>
+      <button class="seg__opt" aria-pressed="false">Ok</button>
+      <button class="seg__opt" aria-pressed="false">Partial</button>
+      <button class="seg__opt" aria-pressed="false">Failed</button>
+    </div>
+    <label><span class="sr-only">Run kind</span><select class="select"><option>All kinds</option><option>ingest.devpost</option><option>ingest.github</option><option>ingest.hn</option><option>ingest.luma</option><option>agent.search</option><option>agent.draft_intro</option><option>zero.enrich</option><option>zero.send</option><option>notion.export</option></select></label>
+    <label><span class="sr-only">Search runs</span><input class="input" placeholder="Search errors, projects, people…"></label>
+    <span class="t-xs t-3 grow" style="text-align: right">Showing 9 of 1,284</span>
+  </div>
+
+  <div class="table-wrap">
+    <table class="table">
+      <thead><tr><th scope="col">Time</th><th scope="col">Run</th><th scope="col">Kind</th><th scope="col">Input</th><th scope="col">Status</th><th scope="col">What went wrong</th><th scope="col">How it was handled</th></tr></thead>
+      <tbody>
+        <tr aria-expanded="true">
+          <td class="run__time">20:41:07</td><td class="run__id">r_4821</td><td class="run__kind">agent.search</td>
+          <td class="run__input">"WhatsApp bot that revives dead community chats"</td>
+          <td><span class="status status--partial">partial</span></td>
+          <td class="run__err run__err--partial">bad match: "Pulse" (heart-rate wearable)</td>
+          <td class="run__handled">Same name as the chat bot. Dropped it: domain tag was <code>health/hardware</code>. Returned 3 of 4.</td>
+        </tr>
+        <tr class="trace-row">
+          <td colspan="7" class="trace">
+            <ol class="trace__steps" aria-label="Trace for r_4821">
+              <li><span class="t-3">+0.0s</span><span style="color: var(--sp-grok)">grok</span><span>tool_call search_memory("whatsapp bot · community chat revival")</span></li>
+              <li><span class="t-3">+1.8s</span><span style="color: var(--sp-cognee)">cognee</span><span>graph completion → 14 nodes, 4 projects above 0.6</span></li>
+              <li><span class="t-3">+2.1s</span><span style="color: var(--sp-grok)">grok</span><span>rejected pulse-hr (domain mismatch: health/hardware ≠ community/messaging)</span></li>
+              <li><span class="t-3">+2.2s</span><span style="color: var(--sp-grok)">grok</span><span>highlight([pulse, nudge, chatcpr]) · fly_to(pulse)</span></li>
+              <li><span class="t-3">+2.4s</span><span style="color: var(--sp-supabase)">supabase</span><span>get_evidence(priya-r) → 4 chips</span></li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td class="run__time">20:38:52</td><td class="run__id">r_4818</td><td class="run__kind">ingest.github</td>
+          <td class="run__input">liveness refresh · 312 repos</td>
+          <td><span class="status status--failed">failed</span></td>
+          <td class="run__err">GitHub rate limit · 403 · resets 21:14</td>
+          <td class="run__handled">Stopped at 288/312. Remaining 24 keep their last value, marked <span class="live live--unknown">unknown</span> until retry.</td>
+        </tr>
+        <tr>
+          <td class="run__time">20:31:15</td><td class="run__id">r_4809</td><td class="run__kind">ingest.devpost</td>
+          <td class="run__input">hackcollective-food.devpost.com</td>
+          <td><span class="status status--failed">failed</span></td>
+          <td class="run__err">gallery empty or private</td>
+          <td class="run__handled">0 projects found. Event kept in <code>events</code> with no projects. Flagged for manual check.</td>
+        </tr>
+        <tr>
+          <td class="run__time">20:30:44</td><td class="run__id">r_4807</td><td class="run__kind">ingest.github</td>
+          <td class="run__input">ChatCPR · AI Pilled Night</td>
+          <td><span class="status status--partial">partial</span></td>
+          <td class="run__err run__err--partial">no public repo linked</td>
+          <td class="run__handled">Liveness set to <span class="live live--unknown">unknown</span>, not "dead". The agent says it can't tell.</td>
+        </tr>
+        <tr>
+          <td class="run__time">20:22:03</td><td class="run__id">r_4795</td><td class="run__kind">agent.search</td>
+          <td class="run__input">"5 speakers on agent memory"</td>
+          <td><span class="status status--partial">partial</span></td>
+          <td class="run__err run__err--partial">Cognee timeout after 8s</td>
+          <td class="run__handled">Fell back to pgvector similarity. Results labelled "fallback search".</td>
+        </tr>
+        <tr>
+          <td class="run__time">20:19:40</td><td class="run__id">r_4790</td><td class="run__kind">zero.enrich</td>
+          <td class="run__input">Mei Chen</td>
+          <td><span class="status status--failed">failed</span></td>
+          <td class="run__err">no confident match in Zero (2 candidates)</td>
+          <td class="run__handled">Didn't guess. Profile shows public data only, no "via Zero" badge.</td>
+        </tr>
+        <tr>
+          <td class="run__time">20:12:31</td><td class="run__id">r_4782</td><td class="run__kind">agent.draft_intro</td>
+          <td class="run__input">You → Sana Mirza</td>
+          <td><span class="status status--partial">partial</span></td>
+          <td class="run__err run__err--partial">no warm path in Zero</td>
+          <td class="run__handled">Wrote a cold draft and labelled it "cold". 2 citations.</td>
+        </tr>
+        <tr>
+          <td class="run__time">20:05:18</td><td class="run__id">r_4770</td><td class="run__kind">notion.export</td>
+          <td class="run__input">Speakers · Nov meetup (3 rows)</td>
+          <td><span class="status status--ok">ok</span></td>
+          <td class="t-3">—</td>
+          <td class="run__handled">3 rows written with evidence links.</td>
+        </tr>
+        <tr>
+          <td class="run__time">19:58:09</td><td class="run__id">r_4761</td><td class="run__kind">ingest.hn</td>
+          <td class="run__input">"Pulse" mentions</td>
+          <td><span class="status status--ok">ok</span></td>
+          <td class="t-3">—</td>
+          <td class="run__handled">1 Show HN matched. 6 unrelated "Pulse" hits discarded by builder-name check.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section class="honest" aria-label="Coverage">
+    <div class="card stack">
+      <h3>Data coverage</h3>
+      <div class="stack" style="gap: var(--sp-2)">
+        <div class="row row--between t-sm"><span>Projects with a team identified</span><span class="num">291 / 312 · 93%</span></div>
+        <div class="score__bar"><span style="width: 93%"></span></div>
+        <div class="row row--between t-sm"><span>Projects with a GitHub repo checked</span><span class="num">214 / 312 · 69%</span></div>
+        <div class="score__bar"><span style="width: 69%"></span></div>
+        <div class="row row--between t-sm"><span>Intro drafts with 2+ citations</span><span class="num">18 / 18 · 100%</span></div>
+        <div class="score__bar"><span style="width: 100%"></span></div>
+      </div>
+    </div>
+    <div class="card stack">
+      <h3>Search quality, scored by hand</h3>
+      <p class="t-sm t-2">10 test queries, top-5 relevance. We mark these ourselves and show the number.</p>
+      <div class="row" style="gap: var(--sp-6)">
+        <div class="stat"><span class="stat__value">7.4 / 10</span><span class="stat__label">mean relevant in top 5</span></div>
+        <div class="stat"><span class="stat__value" style="color: var(--partial)">2</span><span class="stat__label">queries below 5</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

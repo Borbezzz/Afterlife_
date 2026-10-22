@@ -1,0 +1,4862 @@
+{
+  "model": "gpt-6-astra",
+  "generated_at": "2026-10-22T19:25:32.799Z",
+  "dimensions": [
+    {
+      "id": "commercial",
+      "label": "Commercial intent",
+      "lowLabel": "Non-profit",
+      "highLabel": "Commercial"
+    },
+    {
+      "id": "deeptech",
+      "label": "Deep technology",
+      "lowLabel": "Applied software",
+      "highLabel": "Deep tech"
+    },
+    {
+      "id": "traction",
+      "label": "Public momentum",
+      "lowLabel": "Limited evidence",
+      "highLabel": "Active development"
+    },
+    {
+      "id": "ai",
+      "label": "AI & agents",
+      "lowLabel": "Low affinity",
+      "highLabel": "High affinity"
+    },
+    {
+      "id": "climate",
+      "label": "Climate",
+      "lowLabel": "Low affinity",
+      "highLabel": "High affinity"
+    },
+    {
+      "id": "health",
+      "label": "Health",
+      "lowLabel": "Low affinity",
+      "highLabel": "High affinity"
+    },
+    {
+      "id": "fintech",
+      "label": "Finance",
+      "lowLabel": "Low affinity",
+      "highLabel": "High affinity"
+    },
+    {
+      "id": "devtools",
+      "label": "Developer tools",
+      "lowLabel": "Low affinity",
+      "highLabel": "High affinity"
+    },
+    {
+      "id": "consumer",
+      "label": "Consumer",
+      "lowLabel": "Low affinity",
+      "highLabel": "High affinity"
+    }
+  ],
+  "projects": [
+    {
+      "id": "devpost:wonkers-are-use",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Generated elevator adventures integrate existing models; the repository has no stars or post-event commits and business intent is unclear.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:world-model-pro-max",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.4,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.2,
+        "consumer": 0.3
+      },
+      "rationale": "Driving simulation targets transferable robotics lessons, but technical novelty is unclear and the repository shows no momentum.",
+      "confidence": 0.7
+    },
+    {
+      "id": "devpost:anything-play",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.2,
+        "consumer": 1
+      },
+      "rationale": "Golem combines deterministic game rules with generated visuals and voice edits, with no repository evidence or explicit business intent.",
+      "confidence": 0.83
+    },
+    {
+      "id": "devpost:hazardlab",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A personal photo journal uses existing depth and world models, with no supplied repository evidence.",
+      "confidence": 0.82
+    },
+    {
+      "id": "devpost:roomshift-ai",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI furniture previews explicitly support online product shopping, but the repository has no stars or post-event commits.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:gpt-h3",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.95,
+        "traction": 0.02,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.25,
+        "consumer": 0
+      },
+      "rationale": "A frozen video backbone feeds a 255M-parameter robot action policy, while one star and no subsequent commits indicate minimal momentum.",
+      "confidence": 0.94
+    },
+    {
+      "id": "devpost:skopos-ei7kxz",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.75,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.7,
+        "consumer": 0
+      },
+      "rationale": "Physical-environment modeling and adversarial robotics evaluation suggest research depth, but implementation and repository evidence are limited.",
+      "confidence": 0.71
+    },
+    {
+      "id": "devpost:exposure-hq4avt",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0.02,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "The therapist is a horror-game character rather than a clinical tool, and its repository has only one star with no follow-up commits.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:replay-ki5wj0",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.2,
+        "traction": 0.02,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Multi-angle football reconstruction relies on existing model services and reports limitations, with no stars or post-event commits despite an alive repository.",
+      "confidence": 0.81
+    },
+    {
+      "id": "devpost:vibeparty",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0.06,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Browser party games use generated videos, and one post-event commit provides slight repository momentum without explicit commercial intent.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:worldgym",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.4,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 1,
+        "consumer": 0
+      },
+      "rationale": "Scripted navigation and frame metrics benchmark world-model consistency, but the repository shows no stars or continued commits.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:dog-wam",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.85,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.2,
+        "consumer": 0.2
+      },
+      "rationale": "Robot-embodiment fine-tuning and collected teleoperation data suggest substantial engineering, though the description is sparse and no repository is supplied.",
+      "confidence": 0.68
+    },
+    {
+      "id": "devpost:ignite-academy",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0.15,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "Generated firefighter training scenarios target professional readiness, but business intent, simulation validity and repository momentum are unestablished.",
+      "confidence": 0.71
+    },
+    {
+      "id": "devpost:loop-house",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A time-loop game uses live world-model generation, with no explicit business model or repository momentum.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:emergent-wave-phenomenon-from-jepa-world-models",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.95,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.15,
+        "consumer": 0
+      },
+      "rationale": "Training JEPA from scratch on reaction-diffusion dynamics is scientific research, though claimed generalization lacks supplied repository verification.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:atlas-3c0jm6",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "Historical newspapers become interactive educational scenes through Reactor, while repository activity metrics and business intent are missing.",
+      "confidence": 0.81
+    },
+    {
+      "id": "devpost:livable-worlds",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "LLM-guided world models animate artwork for exploration, but historical accuracy is aspirational and no repository momentum is supplied.",
+      "confidence": 0.81
+    },
+    {
+      "id": "devpost:room-scan-ai-explorable-world-worlds-london-hackathon",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.5,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.15,
+        "consumer": 0.6
+      },
+      "rationale": "The tagline describes depth-targeted visual encoding and room reconstruction, but the near-empty description and absent repository limit certainty.",
+      "confidence": 0.5
+    },
+    {
+      "id": "devpost:cities-in-the-past-world-model",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Archival photo search seeds navigable generated cities, with no stars, follow-up commits or explicit commercial intent.",
+      "confidence": 0.89
+    },
+    {
+      "id": "devpost:tomedia",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.2,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.3
+      },
+      "rationale": "An editable news-to-visual publishing workspace is described, but AI implementation and business use are unspecified and repository momentum is absent.",
+      "confidence": 0.58
+    },
+    {
+      "id": "devpost:afterimage-begx2k",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A deterministic state machine stabilizes a generated time-loop boss game, with no supplied repository or commercial evidence.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:slopshop",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.1,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI-hosted outfit shopping explicitly targets purchases and future business checkout, but no repository or implemented checkout evidence is supplied.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:ajar",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.65
+      },
+      "rationale": "Generated brand experiences and attribution explicitly serve marketing businesses, while the promotional claims lack repository momentum evidence.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:hazarddetection",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.35,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0.7,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.5
+      },
+      "rationale": "Collision-mesh simulations seek household injury hazards, but precision is acknowledged as limited and no repository is supplied.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:360-world-model-clips-for-sports",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0.02,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Sports highlights use prompted H3 API calls for synthetic viewpoints, with only one repository star and no post-event commits.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:fliq-5qfpcg",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.15,
+        "consumer": 0.9
+      },
+      "rationale": "Forkable generated narratives are proposed, but implementation details are sparse and the repository has no measured momentum.",
+      "confidence": 0.68
+    },
+    {
+      "id": "devpost:hercules12labours",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0,
+        "ai": 0.45,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A browser game teaches Hercules myths, though Reactor's precise role is unclear and no repository evidence is supplied.",
+      "confidence": 0.75
+    },
+    {
+      "id": "devpost:reinforcement-learning-brain-surgical-simulation",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.8,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0.4,
+        "consumer": 0
+      },
+      "rationale": "A labeled voxel brain and reward-driven agent simulate DBS placement, but clinical validity and repository momentum are unverified.",
+      "confidence": 0.82
+    },
+    {
+      "id": "devpost:dream-island-1to34n",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A generated photo-safari game integrates Reactor and browser media tools, with no stars or post-event repository activity.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:pact-tdywm9",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.5,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Shared-flat document translation, bill splitting and chores are consumer utilities, with zero stars or continued commits despite the award.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:lazyq",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.02,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "QR-based virtual queues explicitly serve restaurant and store customers using conventional web technology, with no repository momentum.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:jabmap",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0,
+        "ai": 0.65,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Personalized travel-vaccine guidance and clinic discovery are health-focused, though AI details are limited and repository momentum is absent.",
+      "confidence": 0.84
+    },
+    {
+      "id": "devpost:local-ish",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.7,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI local-price checks and shared travel spending support personal finance, but no public repository evidence is supplied.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:squidwardz",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A crowdsourced campus occupancy map serves students; coding assistants do not establish product AI and the repository shows no momentum.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:pythagoras",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Indoor campus routing addresses accessibility and detours, but novel routing methods are unspecified and repository momentum is absent.",
+      "confidence": 0.83
+    },
+    {
+      "id": "devpost:sidequest-kg01jx",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0,
+        "ai": 0.6,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Student event discovery combines timetables, maps and AI services, with no stars or post-event commits and unclear business intent.",
+      "confidence": 0.83
+    },
+    {
+      "id": "devpost:budgetbestie-tlybue",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.65,
+        "climate": 0,
+        "health": 0,
+        "fintech": 1,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Personality-informed budget plans target student finances, though AI methods are unspecified and the repository has no momentum.",
+      "confidence": 0.84
+    },
+    {
+      "id": "devpost:docket-atd6pw",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0,
+        "ai": 0.6,
+        "climate": 0,
+        "health": 0.3,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.5
+      },
+      "rationale": "Provable housing-repair records support legal accountability, but blockchain tooling does not establish fintech and repository momentum is absent.",
+      "confidence": 0.77
+    },
+    {
+      "id": "devpost:ami-k894h3",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Safer walking routes and a callable AI companion target personal safety, with no explicit nonprofit status or repository momentum.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:flatmate-vo8ds0",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0.05,
+        "health": 0,
+        "fintech": 0.3,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "An AI tenancy companion explains leases and tracks bills, while commercial intent is unstated and repository momentum is absent.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:fairtime",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.35
+      },
+      "rationale": "Calendar overlays explicitly optimize team meeting workflows, but mathematical novelty is unestablished and the repository shows no momentum.",
+      "confidence": 0.79
+    },
+    {
+      "id": "devpost:phase-zero",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0,
+        "ai": 0.1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "Reusable patient profiles streamline clinical-trial applications and medication tracking, but AI functionality and repository activity metrics are not supplied.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:budget-group-trip-planner",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.9,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Private group budgets and Wise cost splitting combine travel planning with payments, with no stars or post-event repository commits.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:navigable-j1qstk",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0.25,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Accessible campus routing uses a voice agent and existing services, with limited MVP coverage and no repository momentum.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:drug-me-up",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0.02,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Medication tracking combines openFDA information with a Gemini chatbot, but the alive repository still has no stars or post-event commits.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:skill-issue-ifhzsp",
+      "scores": {
+        "commercial": -1,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.25,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.5
+      },
+      "rationale": "The stated social-impact mission matches students to charities needing skills, though product AI details and repository evidence are missing.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:eyes-wise-open",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0,
+        "ai": 0.35,
+        "climate": 0,
+        "health": 0.95,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Blink-rate tracking targets dry-eye prevention, but the sensing method is unspecified and repository momentum is absent.",
+      "confidence": 0.77
+    },
+    {
+      "id": "devpost:savourit",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0.65,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Gemini grocery identification and expiry-aware recipes explicitly reduce food waste, with no hardware evidence or repository momentum.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:wise-lifeswitch",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.02,
+        "traction": 0,
+        "ai": 0.3,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.95,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Cross-border student payment coordination is finance-focused, but implementation and AI details are limited and repository momentum is absent.",
+      "confidence": 0.76
+    },
+    {
+      "id": "devpost:organ-donor-s45c9r",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.7
+      },
+      "rationale": "An HTML organ-donation awareness platform has a public-benefit aim but no explicit nonprofit status and no repository momentum.",
+      "confidence": 0.84
+    },
+    {
+      "id": "devpost:payprooof",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.2,
+        "climate": 0,
+        "health": 0,
+        "fintech": 1,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Payment scam checks and exchange-rate comparisons target consumers, but AI implementation is unclear and the repository shows no momentum.",
+      "confidence": 0.83
+    },
+    {
+      "id": "devpost:streetwise-lzbn04",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.2,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.9,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Travel savings and photo-based affordability checks suggest consumer budgeting, with no repository momentum or clear AI implementation.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:where-s-everyone",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.3,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Shared calendar availability supports social planning and lists Gemini integration, but its role is unspecified and repository momentum is absent.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:almanac-ytj9dg",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.4,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Automatic task scheduling integrates calendars and lists Gemini, without demonstrated technical novelty or repository momentum.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:the-midnight-stacks",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.05,
+        "ai": 0.2,
+        "climate": 0,
+        "health": 0.15,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A standard WebGL virtual bookshelf emphasizes comfort, while one star and no post-event commits indicate minimal momentum.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:areamdenvironmental-context-for-clinical-care",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.4,
+        "climate": 0.5,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.1
+      },
+      "rationale": "Postcode-based environmental briefings support clinical care, but research novelty and public repository momentum are unverified.",
+      "confidence": 0.78
+    },
+    {
+      "id": "devpost:cosmo-7s2p31",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Cultural food discovery and rankings are consumer features; Gemini is described as a coding aid and repository momentum is absent.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:ding-5mn4wu",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Women's route safety uses mapping APIs, with no evidence of advanced engineering or post-event repository activity.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:cuore-the-student-health-app",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.7,
+        "climate": 0,
+        "health": 0.95,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI health checklists, medication reminders and gamified habits target students, but the repository shows no momentum.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:packr",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.65,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.1,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Student relocation planning includes an AI item scanner, with no evidence of novel vision research or repository momentum.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:nod-and-hope",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0.2,
+        "fintech": 0.15,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Multilingual visit preparation uses chat, voice and document input, but its dormant repository provides no momentum evidence.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:tripezium",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.4,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Chat-driven itineraries combine travel discovery with currency budgeting, but no public repository evidence is supplied.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:flow-path",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.35,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Reproductive-health education and care navigation list Gemini integration, but neither nonprofit intent nor repository momentum is established.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:pennywise-or7bmp",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 1,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Budgeting and shared-expense management are explicit, whereas listed AI coding tools do not establish AI functionality or traction.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:her-voice-rjbu9e",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.95
+      },
+      "rationale": "A supportive symptom chatbot produces summaries for women, with no clinical research novelty or repository momentum demonstrated.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:iku-hackathon-project",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.85
+      },
+      "rationale": "Student timetable organization is described broadly, without clear AI functionality or supplied repository evidence.",
+      "confidence": 0.65
+    },
+    {
+      "id": "devpost:beantogether",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.4,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Cafe discovery combines mapping APIs and Gemini-generated tags, but no repository evidence establishes public momentum.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:the-hub-i2p4aj",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Aggregating student coursework and society information is ordinary application functionality, with no repository momentum shown.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:tempo-gquotz",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0.35,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A reading-accessibility extension supports dyslexia and ADHD, but its award does not substitute for missing repository momentum evidence.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:prisma_leafhacks",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.04,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.5
+      },
+      "rationale": "A sparse Swift productivity concept has one post-event commit, leaving functionality and domain scope uncertain.",
+      "confidence": 0.4
+    },
+    {
+      "id": "devpost:unravel-ksuajt",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 0.3,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Gemini-backed progressive concept maps support accessible reading, but the repository has no stars or post-event commits.",
+      "confidence": 0.89
+    },
+    {
+      "id": "devpost:hacka-vymnld",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.3
+      },
+      "rationale": "Only helping students is stated, and an inactive repository provides no evidence of functionality or momentum.",
+      "confidence": 0.25
+    },
+    {
+      "id": "devpost:study-flow-y2okcp",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0.15,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Gemini generates personalized study packs and social challenges, but no repository evidence supports public momentum.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:focusd",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.6,
+        "climate": 0,
+        "health": 0.3,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Accessible UCAT preparation includes a computer tutor and calming exercises, but implementation details and repository momentum are limited.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:clarity-s0w4fk",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.15,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0.3,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Gemini rewriting and accessible document conversion are concrete features, while six post-event commits show modest continuation rather than broad adoption.",
+      "confidence": 0.95
+    },
+    {
+      "id": "devpost:learndifferent",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0.25,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Accessible reading features accompany Gemini-generated learning tools, but no public repository momentum is supplied.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:neurolearn-08wxed",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.15,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0.3,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI adaptation to sensory preferences is claimed, and six post-event commits show modest development despite limited implementation detail.",
+      "confidence": 0.79
+    },
+    {
+      "id": "devpost:ucep",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.5
+      },
+      "rationale": "Active-recall education is suggested, but listed AI tools do not clarify functionality and the repository shows no momentum.",
+      "confidence": 0.4
+    },
+    {
+      "id": "devpost:de-clutter",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.25,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.45
+      },
+      "rationale": "A learning tagline and Gemini stack offer little functional evidence, with a dead repository and missing momentum counts.",
+      "confidence": 0.3
+    },
+    {
+      "id": "devpost:quizzverse-f7bktx",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI quizzes and flashcards combine with multiplayer study rooms, but the repository has no demonstrated post-event momentum.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:edutech-learning-style-quiz",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "A learning-preference quiz was built using AI tools, but runtime AI and repository momentum are not evidenced.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:paramark",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0,
+        "traction": 0.08,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 0.25,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Gemini paper marking has explicit funding and marketing ambitions, while two post-event commits provide only slight public momentum.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:social-learning",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.35,
+        "climate": 0,
+        "health": 0.3,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Study support for ADHD and social anxiety uses voiced sprites, but research novelty and repository momentum are not established.",
+      "confidence": 0.81
+    },
+    {
+      "id": "devpost:doom-study",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Gemini chunks and rewrites lessons into gamified microlearning, but the concept lacks supplied repository evidence.",
+      "confidence": 0.84
+    },
+    {
+      "id": "devpost:adapt-6jzwg9",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0.3,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A Gemini study companion targets dyslexia and ADHD, but cited learning research does not establish technical novelty or repository momentum.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:adapthub",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Multiple revision techniques are described, with Claude used for development and no supplied repository momentum evidence.",
+      "confidence": 0.75
+    },
+    {
+      "id": "devpost:study-thing",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "GCSE STEM flashcards and revision tools target students, while code-generation tools alone establish neither AI functionality nor traction.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:discerre",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Gemini selects and generates accessible revision resources, but the repository shows no post-event momentum.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:leafhack-86jhdr",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.55,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Anki and Gemini integration aim at interactive revision, but feature detail and repository momentum evidence are sparse.",
+      "confidence": 0.66
+    },
+    {
+      "id": "devpost:redpen-ai-maths-marking",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI annotates handwritten mathematical errors, but supplied details do not demonstrate novel models or repository momentum.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:study-net-yaphkr",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.1,
+        "climate": 0,
+        "health": 0.25,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Personalized study communities target neurodivergent students, but AI implementation and public repository momentum are unspecified.",
+      "confidence": 0.76
+    },
+    {
+      "id": "devpost:peckish-s2uqwd",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.05,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Gemini generates resources and evaluates teach-back explanations, with one post-event commit indicating only slight continuation.",
+      "confidence": 0.94
+    },
+    {
+      "id": "devpost:shape-shooter-study",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Arcade gameplay alternates with revision questions, with no explicit AI feature or repository momentum.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:kyneta",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.7,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Generated logic puzzles gamify GCSE revision using Gemini, but no public repository evidence is supplied.",
+      "confidence": 0.83
+    },
+    {
+      "id": "devpost:prism-2vtn4k",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0.55,
+        "climate": 0,
+        "health": 0.15,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "A research-informed adaptive learning proof of concept is described, but algorithmic novelty and repository momentum remain unproven.",
+      "confidence": 0.72
+    },
+    {
+      "id": "devpost:dyslexiease",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.25,
+        "climate": 0,
+        "health": 0.35,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.85
+      },
+      "rationale": "Dyslexia assistance is explicit, but sparse feature details and an inactive repository limit confidence in implementation.",
+      "confidence": 0.56
+    },
+    {
+      "id": "devpost:fire-shield-vcwy04",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0.03,
+        "ai": 0.3,
+        "climate": 0.25,
+        "health": 0.8,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "Geospatial exposure tracking supports firefighter safety using simulated data, with one star but no post-event commits or explicit business model.",
+      "confidence": 0.81
+    },
+    {
+      "id": "devpost:pharos-vu4epb",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.2,
+        "traction": 0,
+        "ai": 0.65,
+        "climate": 1,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "Weather-triggered medication review combines health alerts and prescribing data, but validation and repository momentum counts are missing.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:heatguard-piw9ab",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.15,
+        "traction": 0.55,
+        "ai": 0.1,
+        "climate": 0.95,
+        "health": 0.9,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "Heat-safety decisions and contractor compliance evidence have explicit business use, with 100 post-event commits but only one star.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:prisma-jqt53a",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0.1,
+        "ai": 0.85,
+        "climate": 1,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI climate-health questionnaires target women's personalized risk awareness, with four post-event commits but no demonstrated clinical validation.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:climatecare-sentinel",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0.04,
+        "ai": 0.25,
+        "climate": 1,
+        "health": 0.95,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.1
+      },
+      "rationale": "Climate-health forecasting is described without model details, and the repository has zero stars and one post-event commit.",
+      "confidence": 0.82
+    },
+    {
+      "id": "devpost:breathewise-respicast",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0.2,
+        "climate": 0.85,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.1
+      },
+      "rationale": "Cold-weather and mould-risk prevention targets NHS planning, but technical detail is limited and repository momentum is absent.",
+      "confidence": 0.78
+    },
+    {
+      "id": "devpost:halo-d3zlkb",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.85,
+        "climate": 0.95,
+        "health": 0.65,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "An AI-assisted disaster resource map supports community relief, with no repository evidence or explicit nonprofit status supplied.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:barb",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0.95,
+        "health": 0.95,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "Flood-related NHS supply shortages define the use case, while implementation details and repository momentum are limited.",
+      "confidence": 0.79
+    },
+    {
+      "id": "devpost:oya",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 1,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.65
+      },
+      "rationale": "Claude agents combine established heat thresholds, weather APIs and symptom messaging, with no post-event repository activity.",
+      "confidence": 0.94
+    },
+    {
+      "id": "devpost:cross-sight",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0.9,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.1
+      },
+      "rationale": "Hospital respiratory alerts use deterministic scoring and Claude integrations rather than demonstrated research novelty, with no repository momentum.",
+      "confidence": 0.94
+    },
+    {
+      "id": "devpost:friendsheep",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.03,
+        "ai": 0.15,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "The multiplayer sheep game used AI for visual production, while two stars and no later commits indicate minimal public momentum.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:catch-before-they-snatch",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A browser multiplayer pursuit game uses React, Three.js and Socket.io, with no public repository evidence supplied.",
+      "confidence": 0.94
+    },
+    {
+      "id": "devpost:beatfall",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0,
+        "ai": 0.45,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Audio instrument separation supports a rhythm game, but methods and repository evidence are missing.",
+      "confidence": 0.58
+    },
+    {
+      "id": "devpost:last-stand-pv1qy6",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.5,
+        "traction": 0,
+        "ai": 0.6,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "ESP32/IMU hardware and computer vision drive physical combat controls, though the dead repository lacks detailed momentum metrics.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:linkedin-fighters",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "LinkedIn attributes become fighting-game statistics in a Rork-built app, with no runtime AI or repository momentum established.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:deadly-arcane",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0.45,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Camera-based hand gestures cast game spells, but the tracking method and public repository evidence are unspecified.",
+      "confidence": 0.69
+    },
+    {
+      "id": "devpost:cakecanvas",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.4,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Personalized cake postcards and competitive minigames are described, but runtime generation methods and repository momentum are unclear.",
+      "confidence": 0.72
+    },
+    {
+      "id": "devpost:save-dora",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.2
+      },
+      "rationale": "Only a title and Rork tag are supplied, leaving functionality and public momentum unknown.",
+      "confidence": 0.15
+    },
+    {
+      "id": "devpost:food-cup",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.15,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A food-themed multiplayer football party game is described, but AI tooling does not establish runtime AI and no repository is supplied.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:last-card",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Shape-and-pattern matching powers a mobile multiplayer card game; AI is only identified as build tooling and repository evidence is absent.",
+      "confidence": 0.94
+    },
+    {
+      "id": "devpost:trial-by-vibe",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A courtroom game uses OpenRouter for its judge, with no public repository evidence supplied.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:mafia-ai",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Players identify an AI opponent through social minigames, but claimed playability is unsupported by repository momentum data.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:shadequest",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Timed shading exercises and rankings define an art-practice game, with scoring methods and repository evidence unspecified.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:4d-arena-shooter",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "An extra distance dimension modifies shooter damage mechanics without establishing research novelty or public repository momentum.",
+      "confidence": 0.89
+    },
+    {
+      "id": "devpost:mini-game-project",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0.6,
+        "climate": 0,
+        "health": 0.75,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Desk-exercise minigames cite TensorFlow and AI-driven motion, but implementation detail and repository evidence are limited.",
+      "confidence": 0.73
+    },
+    {
+      "id": "devpost:where-to-xr9geh",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI-generated questions turn group planning into a multiplayer party game, with no repository evidence supplied.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:bucketlist-90ovyz",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI agents coordinate saved activities and friend preferences, while the repository is marked dead with no detailed momentum metrics.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:mythic",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.25,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.4,
+        "devtools": 1,
+        "consumer": 0.05
+      },
+      "rationale": "APK reverse engineering produces an unofficial SDK covering payments and mini apps, but public repository momentum is unavailable.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:papapath",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "An AI pregnancy companion gives expectant fathers guidance and support, with no public repository evidence supplied.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:perinatal-companion",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.95
+      },
+      "rationale": "Multilingual AI supports pregnancy check-ins and appointment summaries, but underserved targeting does not establish nonprofit intent or repository momentum.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:preventpath",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0.05,
+        "ai": 0.75,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "NICE-grounded rules guide preventive care while an LLM explains results, with four stars but no post-event commits.",
+      "confidence": 0.96
+    },
+    {
+      "id": "devpost:questmix",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "API-based AI generates social quests and verifies completion, with zero stars and no post-event commits.",
+      "confidence": 0.95
+    },
+    {
+      "id": "devpost:healthlongi",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0.06,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Apple Health, validated questionnaires and AI summaries support prevention, while an alive repository has only one later commit and zero stars.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:roll-call-fvq7oy",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI-generated roleplay revives inactive group chats, with zero repository stars and no post-event commits.",
+      "confidence": 0.94
+    },
+    {
+      "id": "devpost:rally-xmeygo",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI interprets group-chat constraints to coordinate plans, but no public repository evidence is supplied.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:impryntd-agentic-business",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.15,
+        "consumer": 1
+      },
+      "rationale": "Theatre journaling explicitly pairs with agents running a business, while the repository is dead and detailed momentum metrics are missing.",
+      "confidence": 0.93
+    },
+    {
+      "id": "devpost:night-diver",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI alter egos generate imaginary travel logs and images, with no repository evidence or clinical focus established.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:artemis-4ig3c9",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.95
+      },
+      "rationale": "Voice-first maternity triage targets underserved patients, but nonprofit status is unstated and the repository is marked dead without metrics.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:pixie-api",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0.85,
+        "consumer": 0.8
+      },
+      "rationale": "A REST API exposes AI emotion analysis and reply coaching, with no explicit business model or repository momentum supplied.",
+      "confidence": 0.93
+    },
+    {
+      "id": "devpost:a-fully-ai-enhanced-social-app",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0.2,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI turns chats and photos into mood-aware personal diaries, but implementation and repository evidence remain limited.",
+      "confidence": 0.82
+    },
+    {
+      "id": "devpost:popiq",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.2,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A curated daily-fact widget targets casual learning, while the AI tag lacks functional detail and no repository is supplied.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:traitor",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "An AI ringleader runs personalized social dares and betrayal reveals, with no public repository evidence supplied.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:final-ui-design-for-app",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.75,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "The social-matching interface proposes Pixie-powered AI coaching but explicitly leaves functionality unimplemented and supplies no repository.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:project-mira",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.08,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.95
+      },
+      "rationale": "Maternity symptom guidance routes users toward NHS care, with three later commits but zero stars and dormant status.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:throughline-btap3e",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.25,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Mental-health journaling becomes GP briefs, but AI implementation is unspecified and the repository has no stars or later commits.",
+      "confidence": 0.81
+    },
+    {
+      "id": "devpost:vibechat-planning-agent",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A Python LangChain agent leads group planning through API integrations, with no supplied repository evidence.",
+      "confidence": 0.94
+    },
+    {
+      "id": "devpost:build-with-zymix-team-51-ejaz-ahmed",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Google Places and Claude combine venue polling with group decisions, while the repository has zero stars and no later commits.",
+      "confidence": 0.96
+    },
+    {
+      "id": "devpost:clearpicture",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "AI gathers symptom evidence for clinician briefs rather than diagnosis, with no repository evidence supplied.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:miku",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI interprets conversations and drafts relationship replies, with no public repository evidence supplied.",
+      "confidence": 0.93
+    },
+    {
+      "id": "devpost:styleverse-o4r9le",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI virtual try-on supports explicitly revenue-oriented social commerce through fal.ai, while repository stars and later commits are zero.",
+      "confidence": 0.96
+    },
+    {
+      "id": "devpost:handyandy",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.2,
+        "traction": 0.02,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.95
+      },
+      "rationale": "MediaPipe and 3D graphics guide hand rehabilitation without demonstrated novel vision research, with one star and no later commits.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:auto-triage",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "AI symptom triage and hospital routing are claimed, but diagnostic accuracy and public repository momentum are not evidenced.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:cleardose-0cy4qu",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0.55,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Compound-interaction and biomarker safety motivate the project, but the excerpt lacks technical validation and repository evidence.",
+      "confidence": 0.69
+    },
+    {
+      "id": "devpost:manus-hprc93",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI translates NHS letters into summaries and action checklists, with no public repository evidence supplied.",
+      "confidence": 0.94
+    },
+    {
+      "id": "devpost:sorted-it",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.2,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Consumer group planning is clear, but AI tooling does not establish runtime AI and no repository evidence is supplied.",
+      "confidence": 0.72
+    },
+    {
+      "id": "devpost:blindbite",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI-enriched dining recommendations and social chat are explicit, while the repository has zero stars and no post-event commits.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:maternify",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.7,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "Multilingual maternity communication is the core use case, with AI tools listed but no repository momentum evidence.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:circle-cun9pd",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "AI-led student mental-health groups are explicit, but zero stars and no post-event commits indicate minimal public momentum.",
+      "confidence": 0.93
+    },
+    {
+      "id": "devpost:verdict-tu42jq",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.35,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "The agent infers group preferences and offers bill splitting, with no supplied repository evidence.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:mindmyway",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0.01,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.85
+      },
+      "rationale": "AI mental-health monitoring and GP summaries are described without research validation, and repository activity shows no post-event commits.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:marge-ed3q54",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0.01,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "Sleep-apnoea preparation combines oxygen readings, scoring and AI letters, but novel sensing is unproven and repository momentum is minimal.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:find-your-flock",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.35,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Daily photo-based bird identities target social engagement, but AI implementation and repository momentum are unclear.",
+      "confidence": 0.67
+    },
+    {
+      "id": "devpost:careclarity",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.85
+      },
+      "rationale": "Healthcare-letter interpretation uses a GLM-based stack, with zero stars and no post-event commits.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:hos-ai-front-desk-for-nhs-primary-care",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0.01,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.15
+      },
+      "rationale": "An AI phone-intake workflow serves GP staff, but commercial intent is unstated and repository momentum is minimal.",
+      "confidence": 0.89
+    },
+    {
+      "id": "devpost:loop-in",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "An AI bandleader supports collaborative beatboxing, though the listed design tools and absent repository leave implementation uncertain.",
+      "confidence": 0.72
+    },
+    {
+      "id": "devpost:meeteat-group-dining-recommender",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "GLM-powered group restaurant selection is explicit, but UK market targeting does not establish monetization and repository momentum is minimal.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:ovara",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0.01,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "An AI companion targets PCOS and endometriosis care, without demonstrated scientific novelty or post-event repository activity.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:shakeshake",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI planning, matching and chat companions serve social discovery, with zero stars and no post-event commits.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:sheard",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.85
+      },
+      "rationale": "AI maternity conversations produce clinician summaries and NHS navigation, but repository momentum metrics are absent.",
+      "confidence": 0.84
+    },
+    {
+      "id": "devpost:baj",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Personalized early health-pattern detection is proposed with AI APIs, but scientific novelty and repository momentum are unsubstantiated.",
+      "confidence": 0.74
+    },
+    {
+      "id": "devpost:67-sq1j8c",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "An AI character judges and roasts group-chat arguments, with no public repository evidence supplied.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:the-lore-your-group-chat-scored-by-ai",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI turns group conversations into evolving character scores, but no repository momentum evidence is available.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:neuralscreen",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.3,
+        "traction": 0,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "Passive digital phenotyping suggests research-oriented mental-health sensing, but implementation validation and repository evidence are missing.",
+      "confidence": 0.7
+    },
+    {
+      "id": "devpost:local-news-pipeline",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.1,
+        "consumer": 0.45
+      },
+      "rationale": "Cowork automates newsroom research, writing and publishing as an explicit industry workflow, but no repository momentum is supplied.",
+      "confidence": 0.82
+    },
+    {
+      "id": "devpost:maluma",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.6
+      },
+      "rationale": "Student check-ins and Haiku analysis support university wellbeing staff, but nationwide positioning is not repository traction.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:same-room",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "API-based event matching and a D3 room visualization show no deeptech novelty, and the zero-star repository lacks continuation data.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:pip-ur8vt5",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 0.2,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Student interest matching explicitly supports a GTM growth target, but that target is not traction and repository activity is minimal.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:tribe-am6b4s",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI-derived personas match users to communities, with zero stars and no post-event commits despite product positioning.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:usaid-mit125",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "LLM-generated personal future scenarios are ordinary AI integration, and the repository shows no post-event momentum.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:baseline-6270zn",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.25,
+        "traction": 0.03,
+        "ai": 0.7,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "Typing, voice and eye tests suggest neurological signal engineering without clinical validation, while one star and no follow-up commits show low momentum.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:wasted-jz9neq",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 0.15,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Voice and motion check-ins form a social party game rather than validated health assessment, with no repository evidence.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:mediverify-pro-hgeiqt",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 0.65,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.5
+      },
+      "rationale": "Pharmaceutical inventory management and consumer serial verification are explicit business workflows, but the repository has no post-event commits or stars.",
+      "confidence": 0.84
+    },
+    {
+      "id": "devpost:clearhead-wx6rm9",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 0.35,
+        "climate": 0,
+        "health": 0.9,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.85
+      },
+      "rationale": "Student support navigation is clear, but Cursor-based development alone does not establish runtime AI and repository momentum is minimal.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:modelai-bodycheck",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0.01,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Wearable-signal interpretation supports health guidance, but novel hardware or validated research is not shown and repository momentum is minimal.",
+      "confidence": 0.84
+    },
+    {
+      "id": "devpost:plainly-35",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "AI simplifies photographed or pasted NHS letters into actions, with no supplied repository evidence.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:nhs-pathfinder",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "An AI assistant interprets NHS letters and test destinations, while zero stars and no follow-up commits indicate minimal momentum.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:settled-0zeohv",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.4,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "GLM handles group planning and bill settlement, but combinatorial framing alone establishes no research novelty and no repository evidence is supplied.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:deen-duel",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Multiplayer Islamic trivia includes AI quizzes and tutoring, with no repository momentum evidence supplied.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:sanabel",
+      "scores": {
+        "commercial": -1,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.55,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "Community pledges and donations explicitly serve charity, but the supplied repository has no momentum metrics.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:faster-8c4rme",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.25,
+        "traction": 0.01,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.25
+      },
+      "rationale": "A Raspberry Pi multilingual triage kiosk adds hardware integration, but clinical novelty is unproven and repository momentum is minimal.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:basirah",
+      "scores": {
+        "commercial": -1,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0.15,
+        "health": 0.1,
+        "fintech": 0.4,
+        "devtools": 0,
+        "consumer": 0.7
+      },
+      "rationale": "A humanitarian crisis globe explicitly promotes charitable donations, with no supplied AI evidence or repository momentum metrics.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:bid-tracker",
+      "scores": {
+        "commercial": -1,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.35,
+        "devtools": 0,
+        "consumer": 0.1
+      },
+      "rationale": "A Java desktop application tracks charity auctions and checkouts, but repository momentum metrics are absent.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:deenstudio",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "OpenAI-powered Quran video generation serves creators without explicit monetization, and the repository has no stars or post-event commits.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:sakinah-compass",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0.25,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A browser-based spiritual reflection and gratitude companion has no stated AI functionality or supplied repository evidence.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:socratic-anchor",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 1,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.85
+      },
+      "rationale": "An AI-guided creative reflection workspace uses standard web tools, with zero stars and no post-event commits.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:ward-assistant",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.95
+      },
+      "rationale": "A Claude-powered career advisor generates skills plans and CVs, but no repository momentum evidence is supplied.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:asl-interpreter-nik73x",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.2,
+        "traction": 0.01,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0.3,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "Real-time sign-to-speech uses computer-vision libraries, but novel recognition research is unproven and repository momentum is minimal.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:pomo-pal",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.1,
+        "climate": 0,
+        "health": 0.55,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A cat-themed study timer adds breathing and wellbeing prompts, while Claude tooling alone does not establish runtime AI and no repository is supplied.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:no-drama-news",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.05,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.95
+      },
+      "rationale": "Gemini analyzes news claims and tone, with one post-event commit and zero stars indicating limited public continuation.",
+      "confidence": 0.93
+    },
+    {
+      "id": "devpost:viva-eating-disorder-recovery-support",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0.01,
+        "ai": 0.65,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "A recovery-focused browser extension filters triggering content, but classification details are limited and repository momentum is minimal.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:biaslens-s0omz7",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.2,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0.7,
+        "consumer": 0
+      },
+      "rationale": "A proposed pre-model clinical bias safety layer targets ML workflows, but an HTML-only stack and absent repository leave research implementation uncertain.",
+      "confidence": 0.68
+    },
+    {
+      "id": "devpost:council-connect-d0e3b7",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.7
+      },
+      "rationale": "Residents report and upvote civic issues without stated charitable status or AI functionality, and the repository shows minimal momentum.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:ayuda-bvwqks",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0.01,
+        "ai": 0.15,
+        "climate": 0.65,
+        "health": 0.15,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.3
+      },
+      "rationale": "WhatsApp crisis reporting and NASA fire data support disaster resilience, but nonprofit status and runtime AI are unstated and repository momentum is minimal.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:apotek-ai",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.1
+      },
+      "rationale": "Claude-powered pharmacy inventory and dispensing guidance explicitly serve independent businesses, but the pharmacy market size is not traction and no repository is supplied.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:firstsignal",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.1
+      },
+      "rationale": "Claude structures field observations into outbreak alerts, but repository evidence and commercial intent are absent.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:the-living-recipe",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.7,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A Claude-built cooking guide emphasizes cultural context, with no repository or business-model evidence.",
+      "confidence": 0.75
+    },
+    {
+      "id": "devpost:openclaw-security-quest",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.6,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 1,
+        "consumer": 0.1
+      },
+      "rationale": "Gamified agent-security auditing is developer tooling, with no supplied repository momentum or novel research.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:voltplan",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.3,
+        "consumer": 0.7
+      },
+      "rationale": "AI-generated hardware plans support engineering education rather than demonstrated hardware innovation; the repository has no stars or follow-up commits.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:gymsurfing",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0.4,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Gym-buddy matching targets travelers, without explicit AI or commercial intent and with no repository momentum.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:moodmate-ai-powered-wellness-through-music",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0.9,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Heart-rate-responsive music targets student wellbeing, but implementation and repository evidence are limited.",
+      "confidence": 0.66
+    },
+    {
+      "id": "devpost:patalert",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0,
+        "traction": 0.1,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.1
+      },
+      "rationale": "Fashion-brand patent screening integrates Claude vision and USPTO data, with two follow-up commits but no stars.",
+      "confidence": 0.94
+    },
+    {
+      "id": "devpost:day-1-at-a-startup",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.4,
+        "consumer": 0.8
+      },
+      "rationale": "An AI software-career simulator serves students, while the repository shows no stars or follow-up commits.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:claudecare",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "ClaudeCare simplifies patient instructions using existing AI services, with no demonstrated repository momentum.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:genai-for-upskilling-genz-in-mission-critical-workflows",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.5,
+        "devtools": 0,
+        "consumer": 0.2
+      },
+      "rationale": "LLM simulations explicitly train professional auditors, though no repository evidence supports public momentum.",
+      "confidence": 0.83
+    },
+    {
+      "id": "devpost:bluum-lqp0kr",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 1,
+        "devtools": 0,
+        "consumer": 0.2
+      },
+      "rationale": "Private-market intelligence targets advisors and M&A firms, but the repository has no stars or follow-up commits.",
+      "confidence": 0.94
+    },
+    {
+      "id": "devpost:carecompanion-e42lcw",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.3,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Offline medical AI uses local inference and adaptation tooling, but free access does not establish nonprofit status and repository momentum is absent.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:physio-for-you",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.2,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "On-device pose estimation scores rehabilitation movements using existing models, with no repository or validation evidence supplied.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:cakeui",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0.3,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0.4,
+        "consumer": 0.8
+      },
+      "rationale": "Behavior-driven interface simplification aids older users, but AI implementation and repository momentum remain unclear.",
+      "confidence": 0.72
+    },
+    {
+      "id": "devpost:anisketch",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.15,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.3
+      },
+      "rationale": "AI sketch cleanup explicitly supports anime studio workflows, without repository evidence or demonstrated model novelty.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:consonance-ai-powered-clarity-for-complex-debates",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "LLM summaries organize public policy arguments, while the repository shows no stars or follow-up commits.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:mymento",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI prompts and historical context support family storytelling, with no repository or explicit business model supplied.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:spaces-j5dtbk",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.5
+      },
+      "rationale": "Participatory architecture is described vaguely, and Claude-assisted construction does not establish runtime AI or repository momentum.",
+      "confidence": 0.48
+    },
+    {
+      "id": "devpost:promise-tracker",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "AI-assisted civic research compares political promises with public records, but no repository evidence is supplied.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:companion-8s0e4b",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0.9,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Behavioral signals feed Claude-based stress assessments, without supplied clinical validation or repository momentum.",
+      "confidence": 0.89
+    },
+    {
+      "id": "devpost:careroute-j4nd0s",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "NHS-oriented AI triage routes users toward care, but its safety claims and public momentum lack repository evidence.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:repsense-ai",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.2,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0.8,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Computer-vision exercise feedback and AI nutrition planning target consumers, without repository evidence or demonstrated research novelty.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:pathora-c1as87",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.1
+      },
+      "rationale": "Clinical evidence synthesis integrates Claude and PubMed, with no explicit business model or repository momentum.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:let-em-cook-vsab7g",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.3,
+        "climate": 0.6,
+        "health": 0.3,
+        "fintech": 0.7,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Cooking rewards use redeemable crypto tokens and promote reduced delivery waste, but AI details and repository momentum are missing.",
+      "confidence": 0.77
+    },
+    {
+      "id": "devpost:aegis-z1jfev",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0,
+        "ai": 0.3,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.4,
+        "devtools": 0,
+        "consumer": 0.3
+      },
+      "rationale": "Geopolitical economic scenarios combine public data APIs, but the AI label lacks implementation detail and no repository is supplied.",
+      "confidence": 0.72
+    },
+    {
+      "id": "devpost:genostack",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.2,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.3
+      },
+      "rationale": "Genomic profiles inform medication matching, though scientific novelty is unproven and the repository shows no momentum.",
+      "confidence": 0.76
+    },
+    {
+      "id": "devpost:darkfleet",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0.6,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "Spatial data fusion and Claude briefs support illegal-fishing investigations, but existing-tool integration and zero repository momentum limit novelty evidence.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:whalewatcher",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 1,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Claude translates exchange trade streams into financial lessons, with no repository evidence or explicit commercial model.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:wavelength-ct3y48",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0.3,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Adaptive academic reading targets ADHD and dyslexic students, while the listed dead repository lacks detailed momentum metrics.",
+      "confidence": 0.75
+    },
+    {
+      "id": "devpost:does-it-work-a4xy7m",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.6,
+        "climate": 0,
+        "health": 0.2,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.7
+      },
+      "rationale": "Campus accessibility reporting proposes AI credibility scoring, but implementation and repository evidence are limited.",
+      "confidence": 0.76
+    },
+    {
+      "id": "devpost:medi-scribe",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "Claude structures patient symptom histories before appointments, with no stars or post-event repository commits.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:cjp",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Claude-guided oral history supports intergenerational storytelling, but the dead repository has no detailed momentum evidence.",
+      "confidence": 0.82
+    },
+    {
+      "id": "devpost:mission-groundwork",
+      "scores": {
+        "commercial": -1,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.7,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.1,
+        "consumer": 0.2
+      },
+      "rationale": "Mission Groundwork explicitly enables charity formation through generated organizational materials, with no repository momentum.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:nura-73zbm8",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0.02,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "Avatar therapy integrates third-party biometrics and voice APIs, while one star and no follow-up commits indicate minimal momentum.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:bridging-the-gap-8q2gwy",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "LLMs explain academic papers to underserved students, with no evidence of technical novelty or repository momentum.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:videovoice",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Educational video dubbing combines existing speech and voice-cloning models, while detailed repository momentum metrics are missing.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:generative-music-composer",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.2,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "One-click evolving music is described sparsely, and Claude Code usage alone does not establish AI-powered generation.",
+      "confidence": 0.5
+    },
+    {
+      "id": "devpost:pennyfarething",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0.7,
+        "health": 0.3,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Hybrid cycling-transit route optimization promotes cleaner commuting, with no explicit AI and no repository momentum.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:yourpodcast",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.06,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Existing AI services generate personalized podcasts, with four stars but no post-event commits indicating limited momentum.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:artsmart",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.35,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "A claimed trained vision network provides painting feedback, but training evidence is unverified and repository momentum metrics are incomplete.",
+      "confidence": 0.73
+    },
+    {
+      "id": "devpost:greenarc",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0,
+        "ai": 0.6,
+        "climate": 1,
+        "health": 0.2,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.3
+      },
+      "rationale": "Urban greening scenarios estimate heat impacts and generate briefings, but modeling details are sparse and repository momentum is absent.",
+      "confidence": 0.77
+    },
+    {
+      "id": "devpost:sovereign-atlas",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.3,
+        "devtools": 0,
+        "consumer": 0.5
+      },
+      "rationale": "Conflict decision support combines financial and social signals, while detailed implementation and repository momentum evidence remain limited.",
+      "confidence": 0.72
+    },
+    {
+      "id": "devpost:reachout-rzwpfn",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "An AI Telegram bot helps graduates build job-search connections, without supplied repository evidence or explicit commercial intent.",
+      "confidence": 0.83
+    },
+    {
+      "id": "devpost:classquest-871cdv",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.7
+      },
+      "rationale": "Teacher-managed curricula use AI explanations and multilingual access, but no repository or business-model evidence is supplied.",
+      "confidence": 0.81
+    },
+    {
+      "id": "devpost:axiom-labs-stablecoin-risk-intelligence-for-free",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 1,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Free stablecoin risk scoring targets ordinary savers, but free access does not establish nonprofit status and repository momentum is absent.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:health-twin",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.07,
+        "ai": 1,
+        "climate": 0,
+        "health": 0.9,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Lifestyle tracking uses Claude-based insights, with one follow-up commit and no stars showing modest repository activity.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:bridge56",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0.1,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "Multilingual action planning supports refugee resettlement, but charitable status and public repository momentum are not established.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:memory-anchor",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.7
+      },
+      "rationale": "Claude uses photographs and patient histories for reminiscence support, without supplied clinical validation or repository evidence.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:sightbridge",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0.4,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Voice-first image interpretation assists blind users through existing AI and OCR tooling, with no repository evidence.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:cascade-a3ycgo",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.2,
+        "devtools": 0,
+        "consumer": 0.7
+      },
+      "rationale": "Claude-generated policy analyses feed interactive maps rather than demonstrated scientific simulations, and the repository shows no momentum.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:outreach-bd6iyo",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0.8,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.1
+      },
+      "rationale": "Maps health and social needs for policy using Claude; charitable inspiration does not establish nonprofit intent, and the repository shows no momentum.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:mindtrace-ai",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0.4,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Claude-powered browsing insights target student focus and burnout, but no repository evidence or business model is supplied.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:bridge-ai-adviser-assistant",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 1,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "Automates compliance reports for financial advisers with standard APIs; the repository has no stars or post-event commits.",
+      "confidence": 0.95
+    },
+    {
+      "id": "devpost:sharkbyte-8v5m1c",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.35,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.5
+      },
+      "rationale": "Combines NFC readers, ESP32 hardware and mechanical feedback for campus attendance, with no repository momentum evidence.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:focus-field",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.35,
+        "traction": 0,
+        "ai": 0.1,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "BLE and Arduino hardware support location-based phone locking; an AI stack tag and a dead repository provide limited further evidence.",
+      "confidence": 0.75
+    },
+    {
+      "id": "devpost:unibin",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.55,
+        "traction": 0.02,
+        "ai": 0.85,
+        "climate": 0.95,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.35
+      },
+      "rationale": "Camera-based waste classification drives motorized sorting and fill sensors, but one star and no follow-up commits indicate little momentum.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:epsilon-delta",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0.02,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Personalized maths tutoring combines Claude, Manim and voice APIs, with one repository star and no post-event commits.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:studyquest-n67wh4",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.06,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "AI lessons reward students with companion-game resources; one post-event commit provides only slight public momentum.",
+      "confidence": 0.91
+    },
+    {
+      "id": "devpost:studyarena",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.35,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Combines AI study verification and prediction-market mechanics, though real-money finance is unclear and the repository shows no momentum.",
+      "confidence": 0.83
+    },
+    {
+      "id": "devpost:friendunity",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.35,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Social study feeds and live quizzes complement existing AI tutoring, with no stars or post-event repository activity.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:slao",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.1,
+        "climate": 1,
+        "health": 0,
+        "fintech": 0.3,
+        "devtools": 0,
+        "consumer": 0.9
+      },
+      "rationale": "Provides homeowners retrofit feasibility and ROI estimates from public data, with no explicit business model or repository momentum.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:cityzenith",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0.2,
+        "health": 0,
+        "fintech": 0.35,
+        "devtools": 0,
+        "consumer": 0.05
+      },
+      "rationale": "Targets developers with AI planning appraisals and councils with spatial intelligence, but no repository evidence supports momentum.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:aurea-ai-powered-residential-insurance-underwriting",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0.2,
+        "health": 0,
+        "fintech": 1,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "Agent-based insurance underwriting explicitly serves insurers, while its zero-star repository has no post-event commits.",
+      "confidence": 0.95
+    },
+    {
+      "id": "devpost:zonary",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.5,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.1,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "Planning intelligence explicitly helps SMEs choose expansion locations; Gemini is listed, but repository momentum is absent.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:grid-38zo0l",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.3,
+        "traction": 0,
+        "ai": 0,
+        "climate": 1,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "Simulates grid stress and infrastructure scenarios with sustainability metrics, though engineering rigor and repository momentum are unverified.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:hack-seek",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.04,
+        "ai": 0,
+        "climate": 0,
+        "health": 0.05,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Offers real-time London hide-and-seek gameplay; three repository stars without post-event commits show minimal momentum.",
+      "confidence": 0.93
+    },
+    {
+      "id": "devpost:orbitguard",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.8,
+        "traction": 0.15,
+        "ai": 0,
+        "climate": 0.05,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "Targets satellite operators with orbital conjunction analysis and avoidance planning, supported by six follow-up commits but only one star.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:panikbot",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.02,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.95
+      },
+      "rationale": "Uses Gemini and retrieval to turn Discord study conversations into guidance, with one star and no follow-up commits.",
+      "confidence": 0.93
+    },
+    {
+      "id": "devpost:my-stardust",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.03,
+        "ai": 0.65,
+        "climate": 0,
+        "health": 0.05,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Describes a teach-aloud study companion with Google AI tooling; surveys and unrelated subscribers do not add to its minimal repository momentum.",
+      "confidence": 0.76
+    },
+    {
+      "id": "devpost:carbontrade",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.1,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 1,
+        "health": 0,
+        "fintech": 0.85,
+        "devtools": 0,
+        "consumer": 0.15
+      },
+      "rationale": "Proposes an AI-scored carbon marketplace for farmers and buyers, but verification novelty and public repository momentum are unsupported.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:reeltrust",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.15,
+        "traction": 0.03,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0.05,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Integrates physiological liveness checks and blockchain authentication for videos; two stars do not substantiate detection performance or momentum.",
+      "confidence": 0.84
+    },
+    {
+      "id": "devpost:veryfi",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.05,
+        "traction": 0.08,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Uses AI to assess online content credibility through a web app and extension, with two follow-up commits and one star.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:mak-g",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.4,
+        "traction": 0.02,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 0.65,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Raspberry Pi vision monitors posture and phone use with physical alerts, while repository activity remains minimal.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:pocket-desktop-unibuddy",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.25,
+        "traction": 0.02,
+        "ai": 0,
+        "climate": 0,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "An Arduino desktop pet gamifies Pomodoro sessions and rest, with one star and no post-event commits.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:meridian-ka0p2j",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.35,
+        "devtools": 0,
+        "consumer": 0.7
+      },
+      "rationale": "Explicitly supports homeowners and developers with approval predictions and renovation ROI, but dataset scale and repository momentum are unverified.",
+      "confidence": 0.84
+    },
+    {
+      "id": "devpost:lux-wfevci",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.35,
+        "traction": 0,
+        "ai": 0.65,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Combines gesture tracking, Arduino feedback and AI-assisted revision games, with no stars or post-event repository commits.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:party-detector",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.25,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.1
+      },
+      "rationale": "ESP32 sound sensing triggers dorm-security alerts through threshold logic, not AI, and no repository evidence is supplied.",
+      "confidence": 0.92
+    },
+    {
+      "id": "devpost:greystone",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.6,
+        "devtools": 0,
+        "consumer": 0.1
+      },
+      "rationale": "Aggregates location signals for real-estate investment decisions, but model details and repository activity metrics are missing.",
+      "confidence": 0.78
+    },
+    {
+      "id": "devpost:studypro-iqkntj",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Claude generates flashcards and feedback from lecture materials, with no supplied repository evidence or explicit commercial intent.",
+      "confidence": 0.87
+    },
+    {
+      "id": "devpost:lena-wuq6fx",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Integrates student timetables, deadlines and note-grounded AI tutoring; the dead repository lacks activity metrics.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:aegisai-classroom",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.4,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0.1,
+        "health": 0.05,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.1
+      },
+      "rationale": "Combines face recognition, head-pose estimation and environmental sensors for classrooms, without repository evidence or validated engagement accuracy.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:unherit",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.6,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Proposes exposing children's digital shadow profiles using AI APIs, but deletion capabilities and repository momentum are not demonstrated.",
+      "confidence": 0.7
+    },
+    {
+      "id": "devpost:spoton-3um1eq",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.25,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.8
+      },
+      "rationale": "Tracks doorway traffic to show live study-space occupancy using ESP hardware, with no supplied repository evidence.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:read-meet",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.07,
+        "ai": 0.5,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Coordinates book suggestions, voting and reading meetups with Gemini tooling, showing two follow-up commits but no stars.",
+      "confidence": 0.89
+    },
+    {
+      "id": "devpost:smart-space-3eoqfj",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.25,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0.05,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0.7
+      },
+      "rationale": "PIR sensors and ESP32 devices release unused study bookings, while zero stars and follow-up commits indicate no public momentum.",
+      "confidence": 0.93
+    },
+    {
+      "id": "devpost:aura-l1egao",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.07,
+        "ai": 0.95,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Gemini tutoring and voice briefings support student task planning, with two post-event commits and no stars.",
+      "confidence": 0.93
+    },
+    {
+      "id": "devpost:iqmulate-ai",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.02,
+        "ai": 1,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Uses AI to diagnose study weaknesses and organize practice from uploaded materials, with one star and no follow-up commits.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:siteline",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.15,
+        "traction": 0,
+        "ai": 0.85,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.2,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "Ranks councils for property developers using planning statistics and a claimed neural network, without repository or model-validation evidence.",
+      "confidence": 0.85
+    },
+    {
+      "id": "devpost:unimap",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0.01,
+        "ai": 0.75,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Generates course knowledge maps and quizzes using DiscoverUni and Gemini, but zero stars and follow-up commits indicate negligible momentum.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:region-match",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.15,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0.15,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "A trained model ranks business locations using regional economic indicators, though model novelty is unclear and repository momentum is absent.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:neuro-orchestra",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.4,
+        "traction": 0,
+        "ai": 0.95,
+        "climate": 0.3,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0.15,
+        "consumer": 0
+      },
+      "rationale": "Proposes campus automation through physical edge agents and sensors, but implementation depth and public momentum remain unverified.",
+      "confidence": 0.73
+    },
+    {
+      "id": "devpost:knowunity",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.9,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Connects university calendars to AI warm-up quizzes and study support, with a brief description and no repository evidence.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:pengwin-06jx2v",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.3,
+        "traction": 0.02,
+        "ai": 0.25,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Combines a phone camera and ultrasonic sensor to watch belongings, though AI implementation is unclear and repository momentum is minimal.",
+      "confidence": 0.81
+    },
+    {
+      "id": "devpost:the-golden-years",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.7,
+        "climate": 0,
+        "health": 0.25,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Uses journal sentiment and shared interests to connect retirees, but charitable status and repository momentum are not established.",
+      "confidence": 0.8
+    },
+    {
+      "id": "devpost:the-desk-pet-that-holds-you-accountable-for-doomscrilling",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.25,
+        "traction": 0,
+        "ai": 0,
+        "climate": 0,
+        "health": 0.15,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "An Arduino-based desk pet rewards productive habits, with limited implementation detail and no repository evidence.",
+      "confidence": 0.77
+    },
+    {
+      "id": "devpost:sentient-coach",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 1,
+        "climate": 0,
+        "health": 0.15,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Uses Gemini webcam analysis and voice APIs to adapt tutoring, without novel emotion-recognition research or repository evidence.",
+      "confidence": 0.88
+    },
+    {
+      "id": "devpost:propflow-41l6vy",
+      "scores": {
+        "commercial": 1,
+        "deeptech": 0.05,
+        "traction": 0,
+        "ai": 0.55,
+        "climate": 1,
+        "health": 0,
+        "fintech": 0.15,
+        "devtools": 0,
+        "consumer": 0.15
+      },
+      "rationale": "Scores retrofit priorities for councils, landlords and agents using EPC and property data, with no repository evidence and limited AI implementation detail.",
+      "confidence": 0.84
+    },
+    {
+      "id": "devpost:radius-bf1s8o",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "A browser extension analyzes news diversity and supplies Gemini recommendations, while its repository shows no stars or follow-up commits.",
+      "confidence": 0.9
+    },
+    {
+      "id": "devpost:cognilink",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0,
+        "traction": 0,
+        "ai": 0.8,
+        "climate": 0,
+        "health": 0,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 1
+      },
+      "rationale": "Uses semantic linking and graph visualization to organize lecture notes, with no evidence of research novelty or repository momentum.",
+      "confidence": 0.86
+    },
+    {
+      "id": "devpost:thermoscout",
+      "scores": {
+        "commercial": 0,
+        "deeptech": 0.65,
+        "traction": 0.03,
+        "ai": 0.15,
+        "climate": 1,
+        "health": 0.1,
+        "fintech": 0,
+        "devtools": 0,
+        "consumer": 0
+      },
+      "rationale": "An autonomous robot maps indoor thermal conditions for energy-waste detection, but two stars and no follow-up commits show little momentum.",
+      "confidence": 0.89
+    }
+  ]
+}

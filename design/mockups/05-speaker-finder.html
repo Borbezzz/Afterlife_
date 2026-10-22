@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Afterlife · Speaker finder</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  .page { max-width: 1320px; }
+  .finder { display: grid; grid-template-columns: 1fr 320px; gap: var(--sp-6); align-items: start; }
+  .query { display: grid; grid-template-columns: 1fr 110px auto; gap: var(--sp-3); align-items: end; }
+  .opts { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+  .speaker td { padding-top: var(--sp-4); padding-bottom: var(--sp-4); }
+  .speaker__rank { font-family: var(--font-mono); font-size: var(--fs-18); color: var(--text-3); }
+  .speaker__who { display: flex; gap: var(--sp-3); align-items: flex-start; min-width: 220px; }
+  .speaker__name { font-weight: var(--fw-semibold); font-size: var(--fs-14); }
+  .speaker__role { font-size: var(--fs-12); color: var(--text-3); }
+  .speaker__why { font-size: var(--fs-13); color: var(--text-2); max-width: 36ch; margin-bottom: var(--sp-2); }
+  .tray { position: sticky; top: calc(var(--nav-h) + var(--sp-6)); }
+  .tray__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--sp-2); }
+  .tray__item { display: flex; gap: var(--sp-2); align-items: center; font-size: var(--fs-14); }
+  .notion-preview { font-family: var(--font-mono); font-size: var(--fs-11); color: var(--text-3); border: 1px dashed var(--line-strong); border-radius: var(--r-sm); padding: var(--sp-3); line-height: 1.7; }
+  .notion-preview b { color: var(--sp-notion); font-weight: var(--fw-medium); }
+  .sel { accent-color: var(--accent); width: 16px; height: 16px; }
+  .excluded td { color: var(--text-3); }
+  @media (max-width: 1080px) { .finder { grid-template-columns: 1fr; } .tray { position: static; } }
+  @media (max-width: 640px) {
+    .query { grid-template-columns: 1fr; }
+    .table thead { display: none; }
+    .table, .table tbody, .table tr, .table td { display: block; width: 100%; }
+    .table tr { border-bottom: 1px solid var(--line); padding: var(--sp-2) 0; }
+    .table td { border: 0; padding: var(--sp-2) var(--sp-4); }
+    .table td:nth-child(1), .table td:nth-child(2) { display: inline-block; width: auto; padding-right: 0; vertical-align: middle; }
+    .speaker__who { min-width: 0; }
+  }
+</style>
+</head>
+<body class="starfield">
+
+<header class="topnav">
+  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"></span>Afterlife <span class="brand__event">London builders · 312 projects</span></a>
+  <nav class="tabs" aria-label="Primary">
+    <a class="tab" href="01-star-map.html">Explore</a>
+    <a class="tab" href="03-before-you-build.html">Before you build</a>
+    <a class="tab" href="05-speaker-finder.html" aria-current="page">Speakers</a>
+    <a class="tab" href="04-intro-draft.html">Intros <span class="tab__count">3</span></a>
+    <a class="tab" href="07-agent-log.html">Agent log</a>
+  </nav>
+  <div class="topnav__right">
+    <a class="btn btn--sm" href="06-claim-profile.html">Claim<span class="hide-sm">&nbsp;profile</span></a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="page__head">
+    <div>
+      <span class="eyebrow">Speaker finder · for organisers</span>
+      <h1>Find speakers with proof</h1>
+      <p class="lead">Give it a topic. Get London builders ranked by what they've shipped, each name with the evidence behind it.</p>
+    </div>
+  </div>
+
+  <form class="card stack" onsubmit="return false" style="margin-bottom: var(--sp-6)">
+    <div class="query">
+      <label class="field"><span class="label">Topic</span><input class="input" value="agent memory"></label>
+      <label class="field"><span class="label">How many</span><select class="select"><option>5</option><option>10</option><option>20</option></select></label>
+      <button class="btn btn--primary">Find speakers</button>
+    </div>
+    <div class="opts" role="group" aria-label="Requirements">
+      <button class="pill" aria-pressed="true">Shipped something</button>
+      <button class="pill" aria-pressed="true">Active in last 90 days</button>
+      <button class="pill" aria-pressed="false">Open to speaking (claimed)</button>
+      <button class="pill" aria-pressed="false">Has hosted on Luma</button>
+      <button class="pill" aria-pressed="false">Not spoken at our events</button>
+    </div>
+  </form>
+
+  <div class="finder">
+    <section class="stack" aria-label="Ranked shortlist">
+      <div class="row row--between row--wrap">
+        <h2>5 speakers on <span style="color: var(--accent)">agent memory</span></h2>
+        <span class="t-xs t-3">Ranked by Cognee graph score · 38 candidates considered</span>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th scope="col"><span class="sr-only">Select</span></th><th scope="col">#</th><th scope="col">Builder</th><th scope="col">Why them · evidence</th><th scope="col">Speaking</th></tr></thead>
+          <tbody>
+            <tr class="speaker">
+              <td><input class="sel" type="checkbox" checked aria-label="Select Tomasz Wilk"></td>
+              <td><span class="speaker__rank">1</span></td>
+              <td><div class="speaker__who"><span class="avatar avatar--h6">TW</span><div><div class="speaker__name">Tomasz Wilk</div><div class="speaker__role">ML engineer · 5 projects</div><span class="via via--zero">via Zero</span></div></div></td>
+              <td><p class="speaker__why">Built <a href="#">Recall</a> (long-term memory for agents on Cognee), winner at AI Agents Lab #6. Still shipping.</p>
+                <div class="chips"><span class="chip chip--devpost"><span class="chip__src">Devpost</span>Winner · AAL #6</span><span class="chip chip--github"><span class="chip__src">GitHub</span>★ 612 · pushed 3d</span><span class="chip chip--hn"><span class="chip__src">HN</span>2 posts</span></div></td>
+              <td><span class="status status--ok">open to speaking</span></td>
+            </tr>
+            <tr class="speaker">
+              <td><input class="sel" type="checkbox" checked aria-label="Select Priya Raman"></td>
+              <td><span class="speaker__rank">2</span></td>
+              <td><div class="speaker__who"><span class="avatar avatar--h3">PR</span><div><div class="speaker__name">Priya Raman</div><div class="speaker__role">Founding eng, Lumen Labs</div><span class="via via--zero">via Zero</span></div></div></td>
+              <td><p class="speaker__why">Pulse keeps per-group conversation memory across weeks. Hosts London agent meetups.</p>
+                <div class="chips"><span class="chip chip--devpost"><span class="chip__src">Devpost</span>2 wins</span><span class="chip chip--github"><span class="chip__src">GitHub</span>★ 214 · pushed 12d</span><span class="chip chip--luma"><span class="chip__src">Luma</span>Hosted 2</span></div></td>
+              <td><span class="status status--ok">open to speaking</span></td>
+            </tr>
+            <tr class="speaker">
+              <td><input class="sel" type="checkbox" checked aria-label="Select Mei Chen"></td>
+              <td><span class="speaker__rank">3</span></td>
+              <td><div class="speaker__who"><span class="avatar avatar--h2">MC</span><div><div class="speaker__name">Mei Chen</div><div class="speaker__role">Researcher · 3 projects</div></div></div></td>
+              <td><p class="speaker__why">Wrote the most-discussed HN post on graph vs vector memory this year. Two hack projects on the same idea.</p>
+                <div class="chips"><span class="chip chip--hn"><span class="chip__src">HN</span>312 pts · front page</span><span class="chip chip--github"><span class="chip__src">GitHub</span>★ 98 · pushed 21d</span><span class="chip chip--missing"><span class="chip__src">Devpost</span>no wins</span></div></td>
+              <td><span class="status status--draft">unclaimed</span></td>
+            </tr>
+            <tr class="speaker">
+              <td><input class="sel" type="checkbox" aria-label="Select Leo Brandt"></td>
+              <td><span class="speaker__rank">4</span></td>
+              <td><div class="speaker__who"><span class="avatar avatar--h2">LB</span><div><div class="speaker__name">Leo Brandt</div><div class="speaker__role">Organiser, AI Agents Lab</div><span class="via via--zero">via Zero</span></div></div></td>
+              <td><p class="speaker__why">Hosted 6 agent events. GroupGlue used a memory layer, but it's dormant now.</p>
+                <div class="chips"><span class="chip chip--luma"><span class="chip__src">Luma</span>Hosted 6</span><span class="chip chip--github"><span class="chip__src">GitHub</span>★ 33 · pushed 4mo</span></div></td>
+              <td><span class="status status--partial">not asked yet</span></td>
+            </tr>
+            <tr class="speaker">
+              <td><input class="sel" type="checkbox" aria-label="Select Dev Patel"></td>
+              <td><span class="speaker__rank">5</span></td>
+              <td><div class="speaker__who"><span class="avatar avatar--h5">DP</span><div><div class="speaker__name">Dev Patel</div><div class="speaker__role">Student · 2 projects</div></div></div></td>
+              <td><p class="speaker__why">Benchmarked 4 memory stores for voice agents at Hack Collective. Good newcomer slot.</p>
+                <div class="chips"><span class="chip chip--devpost"><span class="chip__src">Devpost</span>Finalist</span><span class="chip chip--github"><span class="chip__src">GitHub</span>★ 17 · pushed 40d</span></div></td>
+              <td><span class="status status--draft">unclaimed</span></td>
+            </tr>
+            <tr class="excluded">
+              <td></td><td>–</td>
+              <td colspan="3"><span class="t-sm">2 people who match have hidden their profiles. They're left out, and we don't show who they are.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="card tray stack" aria-labelledby="tray-h">
+      <div class="row row--between"><h3 id="tray-h">Shortlist</h3><span class="num t-3">3 selected</span></div>
+      <ul class="tray__list">
+        <li class="tray__item"><span class="avatar avatar--sm avatar--h6">TW</span>Tomasz Wilk</li>
+        <li class="tray__item"><span class="avatar avatar--sm avatar--h3">PR</span>Priya Raman</li>
+        <li class="tray__item"><span class="avatar avatar--sm avatar--h2">MC</span>Mei Chen</li>
+      </ul>
+      <div class="notion-preview" aria-label="Notion database preview">
+        <b>Notion · Speakers — Nov meetup</b><br>
+        Name · Topic · Rank · Evidence links · Opt-in · Status<br>
+        1 row per speaker, evidence as URLs
+      </div>
+      <button class="btn btn--primary btn--block">Export 3 to Notion <span class="via via--notion" style="background: var(--bg-1)">Notion</span></button>
+      <a class="btn btn--block" href="04-intro-draft.html">Draft speaker asks with Grok</a>
+      <p class="t-xs t-3">Unclaimed people only show public Devpost, GitHub and HN data. Asks go out as Zero drafts, never automatically.</p>
+    </aside>
+  </div>
+</main>
+</body>
+</html>

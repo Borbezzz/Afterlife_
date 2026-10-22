@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Afterlife · Explore</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  /* Page layout only: every value is a token from tokens.css */
+  .hud-tl { position: fixed; top: calc(var(--nav-h) + var(--sp-4)); left: var(--sp-4); z-index: 10; width: 470px; display: flex; flex-direction: column; gap: var(--sp-2); }
+  .hud-card { background: var(--bg-glass); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border: 1px solid var(--line); border-radius: var(--r-lg); padding: var(--sp-3) var(--sp-4); display: flex; flex-direction: column; gap: var(--sp-3); box-shadow: var(--shadow-2); }
+  .hud-card .select { height: 32px; font-size: var(--fs-13); }
+  .filters { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-2); }
+  .agent-panel { position: fixed; z-index: 10; top: calc(var(--nav-h) + var(--sp-4)); right: var(--sp-4); bottom: var(--sp-4); }
+  .prompt-dock { position: fixed; z-index: 10; left: var(--sp-4); right: calc(var(--panel-w) + var(--sp-8)); bottom: var(--sp-6); display: flex; flex-direction: column; align-items: center; gap: var(--sp-3); }
+  .realtime { position: absolute; top: var(--sp-4); left: 50%; transform: translateX(-50%); z-index: 6; margin-left: calc(var(--panel-w) / -2 + 235px); }
+  .realtime .via { height: 26px; padding: 0 var(--sp-3); background: var(--bg-glass); font-size: var(--fs-12); }
+  .legend-dock { position: fixed; left: var(--sp-4); bottom: calc(var(--sp-6) + 96px); z-index: 6; }
+  .grounding { font-size: var(--fs-12); color: var(--text-3); }
+  @media (max-width: 1100px) { .hud-tl { width: 380px; } .realtime { display: none; } }
+  @media (max-width: 820px) {
+    .map { position: relative; inset: auto; height: 62vh; min-height: 420px; }
+    .hud-tl { position: absolute; top: calc(var(--nav-h) + var(--sp-3)); left: var(--gutter); right: var(--gutter); width: auto; }
+    .hud-tl .hud-card + .hud-card, .hud-tl .presets { display: none; }
+    .legend-dock { position: absolute; left: var(--gutter); right: var(--gutter); bottom: auto; top: calc(var(--nav-h) + max(62vh, 420px) - 56px); }
+    .agent-panel { position: static; margin: var(--sp-4) var(--gutter) var(--sp-4); width: auto; }
+    .prompt-dock { position: sticky; left: auto; right: auto; bottom: 0; padding: var(--sp-3) var(--gutter); background: linear-gradient(transparent, var(--bg-0) 40%); }
+    .prompt-dock .prompt-suggestions { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topnav">
+  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"></span>Afterlife <span class="brand__event">London builders · 312 projects</span></a>
+  <nav class="tabs" aria-label="Primary">
+    <a class="tab" href="01-star-map.html" aria-current="page">Explore</a>
+    <a class="tab" href="03-before-you-build.html">Before you build</a>
+    <a class="tab" href="05-speaker-finder.html">Speakers</a>
+    <a class="tab" href="04-intro-draft.html">Intros <span class="tab__count">3</span></a>
+    <a class="tab" href="07-agent-log.html">Agent log</a>
+  </nav>
+  <div class="topnav__right">
+    <a class="btn btn--sm" href="06-claim-profile.html">Claim<span class="hide-sm">&nbsp;profile</span></a>
+  </div>
+</header>
+
+<div class="map" id="map">
+  <canvas id="map-canvas" aria-label="3D star map of 312 London hackathon projects. Three results highlighted: Pulse, Nudge and ChatCPR." role="img"></canvas>
+  <div class="realtime"><span class="via via--supabase">Live · 6 projects added tonight via Supabase Realtime</span></div>
+</div>
+
+<!-- Lens + filters -->
+<section class="hud-tl" aria-label="Lens and filters">
+  <div class="hud-card">
+    <div class="row row--between">
+      <span class="eyebrow">Lens · 3 topic axes</span>
+      <span class="via via--grok">set_axes</span>
+    </div>
+    <div class="lens">
+      <button class="lens__axis"><span class="lens__axis-key">X</span>AI agents ▾</button>
+      <span class="lens__times">×</span>
+      <button class="lens__axis"><span class="lens__axis-key">Y</span>Hardware ▾</button>
+      <span class="lens__times">×</span>
+      <button class="lens__axis"><span class="lens__axis-key">Z</span>Climate ▾</button>
+    </div>
+    <div class="row row--wrap presets">
+      <span class="t-xs t-3">Presets</span>
+      <div class="seg" role="group" aria-label="Lens presets">
+        <button class="seg__opt" aria-pressed="true">Builder</button>
+        <button class="seg__opt" aria-pressed="false">Investor</button>
+        <button class="seg__opt" aria-pressed="false">Organiser</button>
+      </div>
+    </div>
+  </div>
+  <div class="hud-card">
+    <div class="filters">
+      <label class="field"><span class="sr-only">Event</span>
+        <select class="select"><option>All events (38)</option><option>Encode Club AI Hack · Mar 2025</option><option>AI Agents Lab #6 · Sep 2025</option><option>Hack Collective: Civic · Nov 2024</option></select>
+      </label>
+      <label class="field"><span class="sr-only">Technology</span>
+        <select class="select"><option>Any tech</option><option>LangGraph</option><option>WhatsApp Cloud API</option><option>Supabase</option><option>ESP32</option></select>
+      </label>
+    </div>
+    <div class="row row--wrap liveness" role="group" aria-label="Liveness filter">
+      <button class="pill" aria-pressed="true"><span class="dot dot--alive"></span>Alive <span class="num t-3">84</span></button>
+      <button class="pill" aria-pressed="true"><span class="dot dot--dormant"></span>Dormant <span class="num t-3">77</span></button>
+      <button class="pill" aria-pressed="true"><span class="dot dot--dead"></span>Dead <span class="num t-3">121</span></button>
+      <button class="pill" aria-pressed="false"><span class="dot dot--unknown"></span>Unknown <span class="num t-3">30</span></button>
+    </div>
+    <p class="t-xs t-3">Showing <span class="num">282</span> projects · <span class="num">488</span> builders · drag to orbit, scroll to zoom</p>
+  </div>
+</section>
+
+<div class="legend-dock">
+  <div class="map-legend" aria-label="Legend">
+    <span><span class="dot dot--alive"></span>Alive · pushed &lt; 60d</span>
+    <span><span class="dot dot--dormant"></span>Dormant</span>
+    <span><span class="dot dot--dead"></span>Dead</span>
+    <span><span class="dot dot--unknown"></span>Unknown</span>
+    <span><span class="dot dot--person"></span>Builder</span>
+    <span class="t-3">Star size = traction</span>
+  </div>
+</div>
+
+<!-- Agent answer panel -->
+<aside class="panel agent-panel" aria-label="Agent answer">
+  <div class="panel__head">
+    <div class="agent-msg__avatar" aria-hidden="true">G</div>
+    <div class="grow">
+      <h3>Navigator</h3>
+      <div class="row t-xs t-3"><span class="via via--grok">Grok</span><span class="via via--cognee">via Cognee</span></div>
+    </div>
+    <button class="icon-btn" aria-label="Close panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="panel__body">
+    <div class="user-msg">Has anyone built a WhatsApp bot that revives dead community chats?</div>
+    <div class="stack" style="gap: var(--sp-1)">
+      <div class="toolcall"><span class="toolcall__name">search_memory</span>"whatsapp bot · community chat revival" · 14 nodes · 1.8s</div>
+      <div class="toolcall"><span class="toolcall__name">highlight</span>[pulse, nudge, chatcpr]</div>
+      <div class="toolcall"><span class="toolcall__name">fly_to</span>nudge <span class="status status--running">flying</span></div>
+    </div>
+    <div class="agent-msg">
+      <div class="agent-msg__avatar" aria-hidden="true">G</div>
+      <div class="agent-msg__body stack" style="gap: var(--sp-3)">
+        <p>I found <em>3 teams</em> who tried this.</p>
+        <p><em>Pulse</em> (Encode Club AI Hack, Mar 2025) got furthest: 40 commits since the event, last push 12 days ago, and it won Best Community Tool.</p>
+        <p><em>Nudge</em> stopped after the weekend. The repo has 3 commits, all from event day.</p>
+        <p><em>ChatCPR</em> has no public repo linked, so I can't tell how far it got.</p>
+        <p>Want me to draft an intro to <em>Priya Raman</em>, who built Pulse's message scheduler?</p>
+      </div>
+    </div>
+    <div class="panel__section">
+      <div class="row row--between"><span class="eyebrow">Fly-to sequence</span><span class="t-xs t-3 num">2 / 3</span></div>
+      <ol class="flyto">
+        <li class="flyto__item flyto__item--done">
+          <div><div class="flyto__title">Pulse</div><div class="flyto__sub">Encode Club AI Hack · Mar 2025 · 4 builders</div></div>
+          <span class="live live--alive">alive</span>
+        </li>
+        <li class="flyto__item" aria-current="step">
+          <div><div class="flyto__title">Nudge</div><div class="flyto__sub">Hack Collective: Civic · Nov 2024 · 3 builders</div></div>
+          <span class="live live--dead">dead</span>
+        </li>
+        <li class="flyto__item">
+          <div><div class="flyto__title">ChatCPR</div><div class="flyto__sub">AI Pilled Night · Jun 2025 · 2 builders</div></div>
+          <span class="live live--unknown">unknown</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class="panel__foot">
+    <a class="btn btn--primary" href="04-intro-draft.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>Draft intro to Priya</a>
+    <a class="btn" href="02-project-panel.html">Open Pulse</a>
+    <button class="btn btn--ghost">Pause tour</button>
+    <p class="grounding">Grounded in 14 Cognee nodes · <a href="07-agent-log.html">run r_4821 in the agent log</a></p>
+  </div>
+</aside>
+
+<!-- Prompt bar -->
+<div class="prompt-dock">
+  <div class="prompt-suggestions">
+    <button class="suggestion">Deep tech teams still committing 3+ months later</button>
+    <button class="suggestion">Who used LangGraph and voice?</button>
+    <button class="suggestion">Winners that stopped, team under 3</button>
+  </div>
+  <form class="prompt-bar" role="search" onsubmit="return false">
+    <svg class="prompt-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>
+    <label class="sr-only" for="q">Ask the map</label>
+    <input class="prompt-bar__input" id="q" value="Has anyone built a WhatsApp bot that revives dead community chats?">
+    <span class="kbd hide-sm">⌘K</span>
+    <button class="btn btn--primary" aria-label="Ask"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="hide-sm">Ask</span></button>
+  </form>
+</div>
+
+<script>
+window.MAP_CONFIG = {
+  seed: 11, centerX: 0.47, centerY: 0.52, scaleW: 0.32,
+  axes: ['AI agents', 'Hardware', 'Climate'],
+  highlights: [
+    { name: 'Pulse', sub: 'alive', status: 'alive', pos: [-0.25, 0.42, 0.25], size: 6.5, step: 1, team: 4, href: '02-project-panel.html' },
+    { name: 'Nudge', sub: 'dead', status: 'dead', pos: [0.18, 0.12, -0.15], size: 5, step: 2, team: 3, selected: true },
+    { name: 'ChatCPR', sub: 'unknown', status: 'unknown', pos: [-0.05, -0.32, 0.42], size: 4.5, step: 3, team: 2 }
+  ]
+};
+</script>
+<script>
+/* Fake-3D star map. Reads every colour from tokens.css custom properties.
+   Config comes from window.MAP_CONFIG (set before this script). */
+(function () {
+  var cfg = window.MAP_CONFIG || {};
+  var root = getComputedStyle(document.documentElement);
+  function tok(n) { return root.getPropertyValue(n).trim(); }
+  var COL = {
+    alive: tok('--alive'), dormant: tok('--dormant'), dead: tok('--dead-node'), unknown: tok('--unknown-node'),
+    person: tok('--text-2'), line: tok('--line-strong'), accent: tok('--accent'), text3: tok('--text-3'),
+    text1: tok('--text-1'), zero: tok('--sp-zero')
+  };
+  var MONO = tok('--font-mono');
+  function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  var r = rng(cfg.seed || 11);
+  function gauss() { return (r() + r() + r() - 1.5) / 1.5; }
+
+  var canvas = document.getElementById('map-canvas');
+  var host = canvas.parentElement;
+  var ctx = canvas.getContext('2d');
+  var W = 0, H = 0;
+  function resize() {
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
+    W = canvas.clientWidth; H = canvas.clientHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  /* --- data: clustered project stars + builder nodes ------------------- */
+  var clusters = [[-0.55, 0.35, 0.2], [0.5, 0.45, -0.3], [0.1, -0.45, 0.5], [-0.4, -0.3, -0.5], [0.6, -0.2, 0.35], [0, 0.1, 0]];
+  var STATUS = ['alive', 'alive', 'alive', 'dormant', 'dormant', 'dormant', 'dead', 'dead', 'dead', 'dead', 'unknown'];
+  var dimmed = cfg.dimStatuses || [];
+  var projects = [];
+  for (var i = 0; i < 170; i++) {
+    var c = clusters[Math.floor(r() * clusters.length)];
+    var st = STATUS[Math.floor(r() * STATUS.length)];
+    var trac = Math.pow(r(), 2.2);
+    projects.push({ x: c[0] + gauss() * 0.32, y: c[1] + gauss() * 0.32, z: c[2] + gauss() * 0.32, s: st, size: 1.6 + trac * 4.2 + (st === 'alive' ? 0.6 : 0), tw: r() * 6.28 });
+  }
+  var hl = (cfg.highlights || []).map(function (h) {
+    var p = { x: h.pos[0], y: h.pos[1], z: h.pos[2], s: h.status, size: h.size || 5.5, tw: 0, hl: h };
+    projects.push(p); return p;
+  });
+  var people = [], edges = [];
+  for (var j = 0; j < 130; j++) {
+    var a = projects[Math.floor(r() * projects.length)];
+    var pp = { x: a.x + gauss() * 0.12, y: a.y + gauss() * 0.12, z: a.z + gauss() * 0.12, person: true };
+    people.push(pp); edges.push([pp, a]);
+    if (r() < 0.35) edges.push([pp, projects[Math.floor(r() * projects.length)]]);
+  }
+  hl.forEach(function (p) {
+    for (var k = 0; k < (p.hl.team || 3); k++) {
+      var q = { x: p.x + gauss() * 0.1, y: p.y + gauss() * 0.1, z: p.z + gauss() * 0.1, person: true, hlTeam: true };
+      people.push(q); edges.push([q, p, true]);
+    }
+  });
+  var bg = [];
+  for (var b = 0; b < 360; b++) bg.push({ x: r(), y: r(), a: 0.15 + r() * 0.5, s: r() < 0.08 ? 1.4 : 0.8, tw: r() * 6.28 });
+
+  /* --- labels for highlighted nodes (HTML, so they use token styles) --- */
+  var labels = hl.map(function (p) {
+    var el = document.createElement(p.hl.href ? 'a' : 'div');
+    el.className = 'map-label map-label--hl' + (p.hl.href ? ' map-label--link' : '');
+    if (p.hl.href) el.href = p.hl.href;
+    el.innerHTML = (p.hl.step ? '<span class="num" style="color:var(--accent);margin-right:6px">' + p.hl.step + '</span>' : '') + p.hl.name + (p.hl.sub ? '<small>' + p.hl.sub + '</small>' : '');
+    host.appendChild(el); return el;
+  });
+
+  var axes = cfg.axes || ['AI agents', 'Hardware', 'Climate'];
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var angle = cfg.angle || 0.6, t0 = performance.now();
+
+  function project3(p) {
+    var ca = Math.cos(angle), sa = Math.sin(angle);
+    var x = p.x * ca - p.z * sa, z = p.x * sa + p.z * ca, y = p.y;
+    var tilt = 0.32, ct = Math.cos(tilt), stt = Math.sin(tilt);
+    var y2 = y * ct - z * stt, z2 = y * stt + z * ct;
+    var f = 2.8 / (2.8 + z2);
+    var scale = Math.min(W * (cfg.scaleW || 0.42), H * 0.46) * f;
+    var cx = W * (cfg.centerX || 0.5), cy = H * (cfg.centerY || 0.5);
+    return { X: cx + x * scale, Y: cy - y2 * scale, f: f, z: z2 };
+  }
+
+  function draw(now) {
+    var t = (now - t0) / 1000;
+    if (!reduce) angle += 0.0009;
+    ctx.clearRect(0, 0, W, H);
+    // background stars
+    for (var i = 0; i < bg.length; i++) {
+      var s = bg[i];
+      ctx.globalAlpha = s.a * (reduce ? 1 : 0.75 + 0.25 * Math.sin(t * 1.3 + s.tw));
+      ctx.fillStyle = COL.text1;
+      ctx.fillRect(s.x * W, s.y * H, s.s, s.s);
+    }
+    // axes
+    ctx.lineWidth = 1; ctx.font = '500 11px ' + MONO;
+    [[1, 0, 0], [0, 1, 0], [0, 0, 1]].forEach(function (v, k) {
+      var a = project3({ x: -v[0] * 1.15, y: -v[1] * 1.15, z: -v[2] * 1.15 });
+      var e = project3({ x: v[0] * 1.15, y: v[1] * 1.15, z: v[2] * 1.15 });
+      ctx.globalAlpha = 0.5; ctx.strokeStyle = COL.line; ctx.setLineDash([2, 5]);
+      ctx.beginPath(); ctx.moveTo(a.X, a.Y); ctx.lineTo(e.X, e.Y); ctx.stroke(); ctx.setLineDash([]);
+      ctx.globalAlpha = 0.95; ctx.fillStyle = COL.text3;
+      ctx.fillText(['X', 'Y', 'Z'][k] + ' · ' + axes[k].toUpperCase() + ' →', e.X + 6, e.Y + 4);
+    });
+    // edges
+    for (var j = 0; j < edges.length; j++) {
+      var A = project3(edges[j][0]), B = project3(edges[j][1]);
+      ctx.globalAlpha = edges[j][2] ? 0.55 : 0.1;
+      ctx.strokeStyle = edges[j][2] ? COL.accent : COL.person;
+      ctx.beginPath(); ctx.moveTo(A.X, A.Y); ctx.lineTo(B.X, B.Y); ctx.stroke();
+    }
+    // fly-to route between highlighted nodes in step order
+    var route = hl.filter(function (p) { return p.hl.step; }).sort(function (a, b) { return a.hl.step - b.hl.step; });
+    if (route.length > 1) {
+      ctx.globalAlpha = 0.85; ctx.strokeStyle = COL.accent; ctx.lineWidth = 1.5; ctx.setLineDash([6, 6]);
+      ctx.lineDashOffset = reduce ? 0 : -t * 18;
+      ctx.beginPath();
+      route.forEach(function (p, k) { var q = project3(p); if (k) ctx.lineTo(q.X, q.Y); else ctx.moveTo(q.X, q.Y); });
+      ctx.stroke(); ctx.setLineDash([]); ctx.lineWidth = 1;
+    }
+    // nodes sorted back to front
+    var all = projects.concat(people).map(function (p) { return { p: p, q: project3(p) }; });
+    all.sort(function (a, b) { return b.q.z - a.q.z; });
+    for (var n = 0; n < all.length; n++) {
+      var p = all[n].p, q = all[n].q;
+      if (p.person) {
+        ctx.globalAlpha = p.hlTeam ? 0.95 : 0.4; ctx.fillStyle = p.hlTeam ? COL.text1 : COL.person;
+        ctx.beginPath(); ctx.arc(q.X, q.Y, (p.hlTeam ? 2.2 : 1.3) * q.f, 0, 6.283); ctx.fill();
+        continue;
+      }
+      var rad = p.size * q.f;
+      var dim = dimmed.indexOf(p.s) > -1 && !p.hl;
+      var alpha = p.s === 'dead' ? 0.55 : p.s === 'unknown' ? 0.6 : 0.95;
+      if (cfg.focusOnly && !p.hl) alpha *= 0.45;
+      if (dim) alpha *= 0.15;
+      var colr = COL[p.s];
+      if ((p.s === 'alive' || p.s === 'dormant') && !dim) {
+        var glow = ctx.createRadialGradient(q.X, q.Y, 0, q.X, q.Y, rad * (p.s === 'alive' ? 5 : 3.5));
+        glow.addColorStop(0, colr); glow.addColorStop(1, 'transparent');
+        ctx.globalAlpha = (p.s === 'alive' ? 0.35 : 0.2) * (reduce ? 1 : 0.85 + 0.15 * Math.sin(t * 2 + p.tw)) * (cfg.focusOnly && !p.hl ? 0.5 : 1);
+        ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(q.X, q.Y, rad * 5, 0, 6.283); ctx.fill();
+      }
+      ctx.globalAlpha = alpha; ctx.fillStyle = colr;
+      ctx.beginPath(); ctx.arc(q.X, q.Y, rad, 0, 6.283); ctx.fill();
+      if (p.s === 'alive' && !dim) { ctx.globalAlpha = alpha; ctx.fillStyle = COL.text1; ctx.beginPath(); ctx.arc(q.X, q.Y, rad * 0.4, 0, 6.283); ctx.fill(); }
+      if (p.hl) {
+        var pulse = reduce ? 0 : (Math.sin(t * 2.4) + 1) * 2;
+        ctx.globalAlpha = 0.9; ctx.strokeStyle = p.hl.selected ? COL.text1 : COL.accent; ctx.lineWidth = p.hl.selected ? 2 : 1.5;
+        ctx.beginPath(); ctx.arc(q.X, q.Y, rad + 7 + pulse, 0, 6.283); ctx.stroke(); ctx.lineWidth = 1;
+      }
+    }
+    ctx.globalAlpha = 1;
+    // move labels
+    hl.forEach(function (p, k) { var q = project3(p); labels[k].style.left = q.X + 'px'; labels[k].style.top = q.Y + 'px'; });
+    if (!reduce) requestAnimationFrame(draw);
+  }
+  resize(); window.addEventListener('resize', function () { resize(); if (reduce) draw(performance.now()); });
+  requestAnimationFrame(draw);
+})();
+
+</script>
+</body>
+</html>

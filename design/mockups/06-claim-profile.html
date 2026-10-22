@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Afterlife · Claim your profile</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  .page { max-width: 880px; }
+  .step { display: grid; grid-template-columns: 40px 1fr; gap: var(--sp-4); }
+  .step__n { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-mono); font-size: var(--fs-13); border: 1px solid var(--line-strong); color: var(--text-2); background: var(--bg-1); }
+  .step--done .step__n { background: var(--alive-soft); border-color: var(--alive); color: var(--alive); }
+  .step--current .step__n { background: var(--accent); border-color: var(--accent); color: var(--text-inverse); }
+  .step__body { display: flex; flex-direction: column; gap: var(--sp-4); padding-bottom: var(--sp-8); border-left: 1px solid var(--line); margin-left: -36px; padding-left: 36px; }
+  .step:last-child .step__body { border-left-color: transparent; }
+  .gh { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+  .gh-btn { background: var(--text-1); color: var(--text-inverse); border-color: var(--text-1); }
+  .gh-btn:hover { background: var(--text-2); }
+  .match { display: grid; grid-template-columns: 1fr auto; gap: var(--sp-3); align-items: center; padding: var(--sp-3) var(--sp-4); border: 1px solid var(--line); border-radius: var(--r-md); background: var(--bg-1); }
+  .match__title { font-weight: var(--fw-medium); font-size: var(--fs-14); }
+  .match__meta { font-size: var(--fs-12); color: var(--text-3); }
+  .q { display: flex; flex-direction: column; gap: var(--sp-3); }
+  .q__title { font-size: var(--fs-16); font-weight: var(--fw-semibold); }
+  .choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--sp-2); }
+  .choice__label { font-size: var(--fs-14); font-weight: var(--fw-medium); }
+  .choice__hint { font-size: var(--fs-12); color: var(--text-3); }
+  .consent { display: flex; flex-direction: column; }
+  .consent__row { display: grid; grid-template-columns: 1fr auto; gap: var(--sp-4); align-items: center; padding: var(--sp-4) 0; border-bottom: 1px solid var(--line); }
+  .consent__row:last-child { border-bottom: 0; }
+  .consent__title { font-size: var(--fs-14); font-weight: var(--fw-medium); }
+  .consent__hint { font-size: var(--fs-12); color: var(--text-3); }
+  .hide-card { border-color: var(--failed-line); }
+  .savebar { position: sticky; bottom: 0; display: flex; justify-content: space-between; align-items: center; gap: var(--sp-3); flex-wrap: wrap; padding: var(--sp-4) 0; background: linear-gradient(transparent, var(--bg-0) 30%); }
+  @media (max-width: 640px) { .step { grid-template-columns: 1fr; } .step__n { display: none; } .step__body { margin: 0; padding-left: 0; border: 0; } }
+</style>
+</head>
+<body class="starfield">
+
+<header class="topnav">
+  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"></span>Afterlife <span class="brand__event">London builders · 312 projects</span></a>
+  <nav class="tabs" aria-label="Primary">
+    <a class="tab" href="01-star-map.html">Explore</a>
+    <a class="tab" href="03-before-you-build.html">Before you build</a>
+    <a class="tab" href="05-speaker-finder.html">Speakers</a>
+    <a class="tab" href="04-intro-draft.html">Intros <span class="tab__count">3</span></a>
+    <a class="tab" href="07-agent-log.html">Agent log</a>
+  </nav>
+  <div class="topnav__right">
+    <a class="btn btn--sm" href="06-claim-profile.html" aria-current="page">Claim<span class="hide-sm">&nbsp;profile</span></a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="page__head">
+    <div>
+      <span class="eyebrow">Claim your profile</span>
+      <h1>You're on the map. You decide how.</h1>
+      <p class="lead">We built Afterlife from public Devpost, GitHub and HN data. Claim your profile to fix what's wrong, tell people what you want, or hide yourself completely.</p>
+    </div>
+  </div>
+
+  <ol style="list-style: none; margin: 0; padding: 0">
+    <!-- 1 Sign in -->
+    <li class="step step--done">
+      <span class="step__n" aria-hidden="true">✓</span>
+      <div class="step__body">
+        <h2>Sign in</h2>
+        <div class="card gh">
+          <span class="avatar avatar--lg avatar--h3">PR</span>
+          <div class="grow">
+            <div class="row row--wrap"><strong>@priya-r</strong><span class="via via--supabase">Supabase Auth · GitHub</span></div>
+            <p class="t-sm t-3">Signed in. We only read your public profile and public repos.</p>
+          </div>
+          <button class="btn btn--sm btn--ghost">Sign out</button>
+        </div>
+        <p class="t-xs t-3">Before sign-in this card shows one button:
+          <span class="btn btn--sm gh-btn" style="margin-left: var(--sp-2)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0012 2z"/></svg>Sign in with GitHub</span>
+        </p>
+      </div>
+    </li>
+
+    <!-- 2 Confirm -->
+    <li class="step step--current">
+      <span class="step__n" aria-hidden="true">2</span>
+      <div class="step__body">
+        <h2>Is this you?</h2>
+        <p class="t-sm t-2">We matched these projects to your GitHub and Devpost handles. Untick anything that isn't yours.</p>
+        <div class="stack" style="gap: var(--sp-2)">
+          <label class="match"><div><div class="match__title">Pulse <span class="live live--alive" style="margin-left: var(--sp-2)">alive</span></div><div class="match__meta">Encode Club AI Hack · Mar 2025 · matched by GitHub commits</div></div><span class="switch"><input type="checkbox" checked aria-label="Pulse is mine"><span class="switch__track"></span></span></label>
+          <label class="match"><div><div class="match__title">Quorum <span class="live live--dormant" style="margin-left: var(--sp-2)">dormant</span></div><div class="match__meta">AI Agents Lab #4 · May 2025 · matched by Devpost username</div></div><span class="switch"><input type="checkbox" checked aria-label="Quorum is mine"><span class="switch__track"></span></span></label>
+          <label class="match"><div><div class="match__title">TableTalk <span class="live live--dead" style="margin-left: var(--sp-2)">dead</span></div><div class="match__meta">Hack Collective: Food · Aug 2024 · matched by name only, low confidence</div></div><span class="switch"><input type="checkbox" aria-label="TableTalk is mine"><span class="switch__track"></span></span></label>
+        </div>
+        <div class="card hide-card row row--between row--wrap">
+          <div><strong>Hide me entirely</strong><p class="t-sm t-3">Removes your node, names and evidence from search, the map, intros and speaker lists. Projects stay, shown as "1 member hidden".</p></div>
+          <button class="btn btn--danger">Hide my profile</button>
+        </div>
+      </div>
+    </li>
+
+    <!-- 3 Questionnaire -->
+    <li class="step">
+      <span class="step__n" aria-hidden="true">3</span>
+      <div class="step__body">
+        <h2>Three quick questions</h2>
+        <p class="t-sm t-2">Optional. Your answers help the agent make better intros. <span class="via via--cognee">stored in Cognee memory</span></p>
+
+        <fieldset class="q card" style="margin: 0">
+          <legend class="sr-only">Building now</legend>
+          <div class="q__title">1. What are you building now?</div>
+          <input class="input" value="Pulse v2: Telegram + WhatsApp, recap summaries for big groups">
+        </fieldset>
+
+        <fieldset class="q card" style="margin: 0">
+          <legend class="sr-only">Want to meet</legend>
+          <div class="q__title">2. Who do you want to meet?</div>
+          <div class="choices">
+            <label class="choice"><input type="checkbox" checked><span><span class="choice__label">Hardware people</span><br><span class="choice__hint">ESP32, wearables, robotics</span></span></label>
+            <label class="choice"><input type="checkbox" checked><span><span class="choice__label">Community organisers</span><br><span class="choice__hint">Pilot users for Pulse</span></span></label>
+            <label class="choice"><input type="checkbox"><span><span class="choice__label">Co-founder</span><br><span class="choice__hint">Commercial or GTM</span></span></label>
+            <label class="choice"><input type="checkbox"><span><span class="choice__label">Investors</span><br><span class="choice__hint">Pre-seed</span></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="q card" style="margin: 0">
+          <legend class="sr-only">Open to speaking</legend>
+          <div class="q__title">3. Open to speaking or judging?</div>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="speak" checked><span class="choice__label">Yes, speaking and judging</span></label>
+            <label class="choice"><input type="radio" name="speak"><span class="choice__label">Judging only</span></label>
+            <label class="choice"><input type="radio" name="speak"><span class="choice__label">Not right now</span></label>
+          </div>
+        </fieldset>
+      </div>
+    </li>
+
+    <!-- 4 Consent -->
+    <li class="step">
+      <span class="step__n" aria-hidden="true">4</span>
+      <div class="step__body">
+        <h2>Consent</h2>
+        <p class="t-sm t-2">Each switch is stored in the <code>consent</code> table with a timestamp. Change them any time.</p>
+        <div class="card consent">
+          <div class="consent__row"><div><div class="consent__title">Show me on the map and in search</div><div class="consent__hint">Off = your node is hidden, same as "Hide me entirely".</div></div><span class="switch"><input type="checkbox" checked aria-label="Show me on the map"><span class="switch__track"></span></span></div>
+          <div class="consent__row"><div><div class="consent__title">Let people draft intros to me</div><div class="consent__hint">Drafts land in their Zero account. Nothing is ever auto-sent to you.</div></div><span class="switch"><input type="checkbox" checked aria-label="Allow intro drafts"><span class="switch__track"></span></span></div>
+          <div class="consent__row"><div><div class="consent__title">Include me in speaker finder</div><div class="consent__hint">Organisers see your evidence and your answer to question 3.</div></div><span class="switch"><input type="checkbox" checked aria-label="Include in speaker finder"><span class="switch__track"></span></span></div>
+          <div class="consent__row"><div><div class="consent__title">Enrich my profile with Zero</div><div class="consent__hint">Adds role, company and socials, marked "via Zero".</div></div><span class="switch"><input type="checkbox" aria-label="Allow Zero enrichment"><span class="switch__track"></span></span></div>
+          <div class="consent__row"><div><div class="consent__title">Weekly "intro of the week"</div><div class="consent__hint">One suggested intro a week, as a draft you review.</div></div><span class="switch"><input type="checkbox" aria-label="Weekly intro of the week"><span class="switch__track"></span></span></div>
+        </div>
+      </div>
+    </li>
+  </ol>
+
+  <div class="savebar">
+    <span class="t-xs t-3">Last saved: never · public data stays public on Devpost; we just stop using it.</span>
+    <div class="row"><a class="btn btn--ghost" href="01-star-map.html">Cancel</a><button class="btn btn--primary">Save and claim</button></div>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Afterlife · Intro draft</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  .page { max-width: 1320px; }
+  .intro { display: grid; grid-template-columns: 260px 1fr 340px; gap: var(--sp-6); align-items: start; }
+  .intro > * { min-width: 0; }
+  .queue { display: flex; flex-direction: column; gap: var(--sp-2); }
+  .queue__item { display: flex; flex-direction: column; gap: var(--sp-2); padding: var(--sp-3); border-radius: var(--r-md); border: 1px solid var(--line); background: var(--bg-1); color: var(--text-1); }
+  .queue__item:hover { border-color: var(--line-strong); text-decoration: none; }
+  .queue__item[aria-current="true"] { border-color: var(--accent-line); background: var(--accent-soft); }
+  .queue__who { display: flex; gap: var(--sp-2); align-items: center; font-size: var(--fs-14); font-weight: var(--fw-medium); }
+  .queue__meta { font-size: var(--fs-12); color: var(--text-3); }
+  .editor { display: flex; flex-direction: column; gap: var(--sp-4); }
+  .editor .textarea { min-height: 440px; font-size: var(--fs-16); line-height: 1.65; }
+  .parties { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: var(--sp-3); }
+  .party { display: flex; gap: var(--sp-3); align-items: center; }
+  .party__name { font-weight: var(--fw-semibold); font-size: var(--fs-14); }
+  .party__sub { font-size: var(--fs-12); color: var(--text-3); }
+  .cite { font-family: var(--font-mono); font-size: var(--fs-11); color: var(--accent); vertical-align: super; }
+  .evidence { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--sp-2); }
+  .evidence__item { display: grid; grid-template-columns: 22px 1fr; gap: var(--sp-3); padding: var(--sp-3); border-radius: var(--r-md); border: 1px solid var(--line); background: var(--bg-1); }
+  .evidence__n { width: 22px; height: 22px; border-radius: var(--r-xs); display: grid; place-items: center; font-family: var(--font-mono); font-size: var(--fs-11); background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-line); }
+  .evidence__text { font-size: var(--fs-13); color: var(--text-1); }
+  .evidence__src { margin-top: 6px; }
+  .evidence__item--off { opacity: 0.6; border-style: dashed; }
+  .evidence__item--off .evidence__n { background: transparent; color: var(--text-3); border-color: var(--line-strong); }
+  .check { display: flex; align-items: center; gap: var(--sp-2); font-size: var(--fs-13); color: var(--alive); }
+  .sendbar { display: flex; gap: var(--sp-3); align-items: center; justify-content: space-between; flex-wrap: wrap; padding-top: var(--sp-4); border-top: 1px solid var(--line); }
+  @media (max-width: 1180px) { .intro { grid-template-columns: 1fr 320px; } .queue-col { grid-column: 1 / -1; } .queue { flex-direction: row; overflow-x: auto; } .queue__item { min-width: 240px; } }
+  @media (max-width: 820px) { .intro { grid-template-columns: 1fr; } .parties { grid-template-columns: 1fr; } .parties .path__edge { transform: rotate(90deg); margin: var(--sp-2) 0 var(--sp-2) var(--sp-4); } }
+</style>
+</head>
+<body class="starfield">
+
+<header class="topnav">
+  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"></span>Afterlife <span class="brand__event">London builders · 312 projects</span></a>
+  <nav class="tabs" aria-label="Primary">
+    <a class="tab" href="01-star-map.html">Explore</a>
+    <a class="tab" href="03-before-you-build.html">Before you build</a>
+    <a class="tab" href="05-speaker-finder.html">Speakers</a>
+    <a class="tab" href="04-intro-draft.html" aria-current="page">Intros <span class="tab__count">3</span></a>
+    <a class="tab" href="07-agent-log.html">Agent log</a>
+  </nav>
+  <div class="topnav__right">
+    <a class="btn btn--sm" href="06-claim-profile.html">Claim<span class="hide-sm">&nbsp;profile</span></a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="page__head">
+    <div>
+      <span class="eyebrow">Intros</span>
+      <h1>Intro to Priya Raman</h1>
+      <p class="lead">Grok drafted this from shared evidence. Edit anything. Sending to Zero creates a draft in a sequence: you still press send in Zero.</p>
+    </div>
+    <ol class="stepper" aria-label="Intro status">
+      <li class="stepper__step stepper__step--current">Draft</li>
+      <li class="stepper__sep" aria-hidden="true"></li>
+      <li class="stepper__step">Draft in Zero</li>
+      <li class="stepper__sep" aria-hidden="true"></li>
+      <li class="stepper__step">Sent by you</li>
+    </ol>
+  </div>
+
+  <div class="intro">
+    <!-- Queue -->
+    <section class="queue-col stack" aria-label="Intro drafts">
+      <span class="eyebrow">Drafts · 3</span>
+      <div class="queue">
+        <a class="queue__item" href="#" aria-current="true">
+          <span class="queue__who"><span class="avatar avatar--sm avatar--h3">PR</span>Priya Raman</span>
+          <span class="queue__meta">Pulse · warm path via Leo</span>
+          <span class="row"><span class="status status--draft">draft</span><span class="via via--zero">warm</span></span>
+        </a>
+        <a class="queue__item" href="#">
+          <span class="queue__who"><span class="avatar avatar--sm avatar--h5">SM</span>Sana Mirza</span>
+          <span class="queue__meta">Nudge · no warm path</span>
+          <span class="row"><span class="status status--draft">draft</span><span class="via">cold</span></span>
+        </a>
+        <a class="queue__item" href="#">
+          <span class="queue__who"><span class="avatar avatar--sm avatar--h6">TW</span>Tomasz Wilk</span>
+          <span class="queue__meta">Speaker ask · agent memory</span>
+          <span class="row"><span class="status status--running">in Zero, unsent</span></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Editor -->
+    <section class="card editor" aria-label="Message editor">
+      <div class="parties">
+        <div class="party"><span class="avatar avatar--h1">SC</span><div><div class="party__name">You · Sam Carter</div><div class="party__sub">Building: chat-revival bot</div></div></div>
+        <span class="path__edge" aria-hidden="true"></span>
+        <div class="party"><span class="avatar avatar--h3">PR</span><div><div class="party__name">Priya Raman</div><div class="party__sub">Founding eng, Lumen Labs <span class="via via--zero">via Zero</span></div></div></div>
+      </div>
+
+      <div class="callout callout--zero">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 11l7.6-4M8.2 13l7.6 4"/></svg>
+        <div class="stack" style="gap: var(--sp-2)">
+          <span><strong>Warm path found via Zero.</strong> Leo Brandt knows you both (co-hosted AI Agents Lab #4 with Priya).</span>
+          <div class="path">
+            <span class="path__node"><span class="avatar avatar--sm avatar--h1">SC</span>You</span>
+            <span class="path__edge" aria-hidden="true"></span>
+            <span class="path__node"><span class="avatar avatar--sm avatar--h2">LB</span>Leo Brandt</span>
+            <span class="path__edge" aria-hidden="true"></span>
+            <span class="path__node"><span class="avatar avatar--sm avatar--h3">PR</span>Priya</span>
+          </div>
+          <span class="t-xs t-3">No path? We fall back to a cold draft and label it "cold" (see Sana's draft).</span>
+        </div>
+      </div>
+
+      <div class="row row--between row--wrap">
+        <div class="seg" role="group" aria-label="Tone">
+          <button class="seg__opt" aria-pressed="false">Short</button>
+          <button class="seg__opt" aria-pressed="true">Warm</button>
+          <button class="seg__opt" aria-pressed="false">Direct</button>
+        </div>
+        <button class="btn btn--sm btn--ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>Regenerate with Grok</button>
+      </div>
+
+      <label class="field"><span class="label">Subject</span><input class="input" value="Leo said to say hi: WhatsApp community bots"></label>
+      <label class="field">
+        <span class="label">Message</span>
+        <textarea class="textarea">Hi Priya,
+
+Leo Brandt suggested I reach out. I'm starting on a WhatsApp bot that brings quiet community chats back to life, and Pulse is the closest thing I've found [1].
+
+You got past the Meta business verification wall that stopped Nudge and two other teams [2], and your scheduler still ships: 40 commits since Encode Club [3]. We're also both on LangGraph + Supabase [4].
+
+Could I buy you a coffee near Old Street, or take 20 minutes on a call? I'd love to hear what you'd do differently.
+
+Sam</textarea>
+        <span class="hint">Citations like [1] map to the evidence list. They're stripped before sending.</span>
+      </label>
+
+      <div class="sendbar">
+        <div class="callout callout--safe" style="flex: 1 1 320px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span><strong>Nothing sends automatically.</strong> "Send to Zero" adds this as a draft step in your Zero sequence. Priya only gets it when you press send in Zero.</span>
+        </div>
+        <div class="row">
+          <button class="btn">Save draft</button>
+          <button class="btn btn--zero">Send to Zero as draft →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Evidence -->
+    <aside class="stack" aria-labelledby="ev-h">
+      <div class="row row--between"><h3 id="ev-h">Cited evidence</h3><span class="via via--cognee">via Cognee</span></div>
+      <div class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>4 sources cited · rule is 2 or more</div>
+      <ol class="evidence">
+        <li class="evidence__item">
+          <span class="evidence__n">1</span>
+          <div><p class="evidence__text">Pulse is the top match for your idea (0.91).</p><div class="evidence__src chips"><span class="chip chip--devpost"><span class="chip__src">Devpost</span>Pulse · Encode Club</span></div></div>
+        </li>
+        <li class="evidence__item">
+          <span class="evidence__n">2</span>
+          <div><p class="evidence__text">Nudge's README: "blocked on Meta business verification". Pulse shipped past it.</p><div class="evidence__src chips"><span class="chip chip--github"><span class="chip__src">GitHub</span>nudge/README.md</span></div></div>
+        </li>
+        <li class="evidence__item">
+          <span class="evidence__n">3</span>
+          <div><p class="evidence__text">40 commits since 16 Mar 2025, last push 12 days ago.</p><div class="evidence__src chips"><span class="chip chip--github"><span class="chip__src">GitHub</span>pulse · pushed 12d</span></div></div>
+        </li>
+        <li class="evidence__item">
+          <span class="evidence__n">4</span>
+          <div><p class="evidence__text">Shared stack: LangGraph, Supabase.</p><div class="evidence__src chips"><span class="chip chip--devpost"><span class="chip__src">Devpost</span>built-with</span></div></div>
+        </li>
+        <li class="evidence__item evidence__item--off">
+          <span class="evidence__n">–</span>
+          <div><p class="evidence__text">Show HN post on Pulse, 86 points. Not cited. Add it?</p><div class="evidence__src chips"><span class="chip chip--hn"><span class="chip__src">HN</span>Show HN</span><button class="btn btn--sm btn--ghost">+ Cite</button></div></div>
+        </li>
+      </ol>
+      <p class="t-xs t-3">Drafted by Grok (<code>draft_intro</code>) · <a href="07-agent-log.html">run r_4826</a></p>
+    </aside>
+  </div>
+</main>
+</body>
+</html>
