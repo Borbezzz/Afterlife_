@@ -1,76 +1,38 @@
 # Afterlife
 
-Afterlife is a searchable memory of London hackathon projects: what was built, by whom, and how far each project has progressed.
+**Good ideas deserve an afterlife.**
 
-## Run the web app
+Afterlife is a searchable archive of London hackathon projects and the people behind them. Explore what was built, follow the public evidence of what happened after the event, and find earlier work worth learning from or taking further.
+
+The bundled archive contains 300 projects. It combines Devpost write-ups, public team profiles, linked GitHub repositories, and activity signals in an interactive 3D map and a browsable list.
+
+## What you can do
+
+- **Explore the archive:** filter projects by event, technology, and repository activity; switch between map and list views; inspect source links and concise project briefs.
+- **Look before you build:** search for related projects and builders, with grounded summaries and links back to the original evidence.
+- **Find speakers:** discover builders through their public projects, create a shortlist, and export it as CSV.
+- **Prepare introductions:** generate, edit, save, copy, and download introduction drafts. Messages are never sent automatically.
+- **Manage a builder profile:** record consent, speaking preferences, and discovery visibility. Verified ownership requires Supabase GitHub authentication.
+- **Inspect the log:** review recorded searches, drafts, exports, and failures in the local workspace.
+
+The archive and project pages work without service credentials. AI search, drafting, exports, and workspace operations currently run locally; see [deployment limits](#deployment-limits) before hosting publicly.
+
+## Quick start
+
+Use Node.js 22.18 or newer and npm. Run these commands from the repository root:
 
 ```sh
 cd web
 npm ci
+cp .env.local.example .env.local
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). The app redirects to `/explore` and reads the bundled `data/projects.json` snapshot by default.
+Open [localhost:3000](http://localhost:3000). The home route redirects to `/explore`.
 
-## What works locally
+No API key is needed to browse the bundled archive. Add `OPENAI_API_KEY` to `web/.env.local` for model-backed features. Without it, supported search and drafting flows use explicitly labelled local fallbacks.
 
-- **Explore:** 300 public projects, evidence panels, map/list views, liveness filters, selectable 3D lenses, and an archive assistant that highlights projects and changes the map.
-- **Before you build:** Cognee relationship retrieval with canonical source links and Astra summaries; OpenAI semantic retrieval provides a labelled fallback.
-- **Speakers:** evidence-backed builder suggestions, shortlist selection, and CSV export.
-- **Intros:** create, edit, save, copy, and download introduction drafts. Messages are never sent automatically.
-- **Claim:** consent, questionnaire, speaking preferences, and discovery visibility. GitHub ownership verification requires configured Supabase Auth.
-- **Log:** actual search, draft, export, and failure records.
-
-Cognee retrieves project and builder relationships from the scoped public archive. The app uses OpenAI Responses for grounded narration: `gpt-6-astra` for Cognee results, map classification and the relationship assistant, `gpt-6.1-sol` for fallback summaries and drafts, and `text-embedding-3-small` for fallback semantic retrieval. CopilotKit provides the assistant's tool transport. Search results report retrieval provenance independently from whether an AI summary succeeded.
-
-## Configuration
-
-Copy `web/.env.local.example` to `web/.env.local`, then set `OPENAI_API_KEY`. Keep it server-side; do not add a `NEXT_PUBLIC_` prefix. Without it, evidence search and drafting retain an explicitly labelled local fallback.
-
-For Cognee Cloud, also set `COGNEE_API_KEY`, `COGNEE_API_URL` and `COGNEE_DATASET` (default `afterlife`). `OPENAI_RELATIONSHIP_MODEL` defaults to `gpt-6-astra`; `COGNEE_TIMEOUT_MS` defaults to 12000 and is capped at 30000. Credentials are never returned to the browser. From the repository root, seed the public archive and check graph processing:
-
-```sh
-node scripts/sync-cognee.mjs --dry-run
-node scripts/sync-cognee.mjs
-node scripts/sync-cognee.mjs --status
-```
-
-Add `--wait` to sync or status to wait for graph processing. Sync is resumable using an ignored local manifest and uploads only new or changed public project records. It excludes hidden builders and local discovery opt-outs; private claim answers and introduction drafts are not uploaded. It never deletes existing tenant data. To remove an earlier upload from Cognee itself, delete it through the tenant's dataset controls; local opt-outs still prevent that project's retrieval results from being returned by this app.
-
-`GET /api/cognee` verifies authenticated access to the configured dataset and reports graph processing progress when available; it is restricted to the local workspace. Authenticated access does not mean graph processing has finished. Search/chat/speakers and CopilotKit tools use the same graph retrieval path, then resolve results against visible canonical project records. Unrelated tenant datasets and prompt/history echoes are not accepted as evidence. If Cognee is unavailable or returns no resolvable references, the response labels the semantic or local fallback. Results also flag an incomplete graph while processing continues. The archive currently establishes builder/project/event relationships, not verified investor or funding relationships.
-
-`data/project-axes.json` contains the generated Astra classifications for all 300 projects. To regenerate them after changing the public dataset:
-
-```sh
-node scripts/generate-axes.mjs
-```
-
-The map labels are model inferences from public evidence, not verified funding or investment ratings. Raw liveness comes from the dataset's GitHub checks. The map includes a usable list when WebGL is unavailable.
-
-Project descriptions use a short product sentence and up to three feature bullets in both the map and project pages. The full author write-up remains available under “Read full project write-up,” with its original sections and paragraphs. Briefs are prepared offline, so opening a node never calls a model:
-
-```sh
-node web/scripts/generate-project-briefs.mjs
-```
-
-The generator uses `OPENAI_API_KEY` and optional `OPENAI_BRIEF_MODEL` (default `gpt-6-luna`). It resumes from matching cached results, validates length limits and verbatim supporting quotes, and writes `data/project-briefs.json` atomically. Source hashes invalidate briefs when a project's title, tagline, or description changes. New, changed, or uncached records use a local section-based brief until regeneration. The writing rules follow [YC's guidance on clear product descriptions](https://www.ycombinator.com/howtoapply/): explain what the product does first, using simple, specific language.
-
-The semantic index is cached automatically under ignored `data/local/`. `POST /api/search-index` warms it and `GET /api/search-index` reports readiness. Drafts, preferences, and operation logs also persist in `data/local/`; keep that directory on a persistent volume if hosting the app.
-
-### Optional services
-
-- **Supabase:** set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`, apply the schema in `supabase/`, enable GitHub OAuth, and allow the app's `/claim` callback URL. Project reads fall back to the bundled snapshot on a database failure. Public builder records need a matching GitHub identity for verified claims.
-- **Zero:** draft forwarding requires a verified draft endpoint in `ZERO_DRAFT_ENDPOINT` and optionally `ZERO_API_KEY`. Without one, the UI reports unavailable. This app never invokes automatic sending.
-- **Notion:** CSV export works locally. Direct Notion export is not implemented and is explicitly unavailable.
-- **Cognee:** the running app uses the cloud HTTP API; `scripts/sync-cognee.mjs` imports the public snapshot. The original local Python pipeline remains in `ingest/`. Live event subscriptions are not configured.
-
-No external service is shown as successful merely because a placeholder exists.
-
-## UI sources
-
-Reusable controls use the repository's [ReUI](https://reui.io/) components. The custom agent chat adapts [BeautifulUI's ChatComposer](https://www.beautifului.dev/r/chat-composer.json) and uses headless CopilotKit. Existing ReUI/BeautifulUI transitions supply motion; no additional animation kit was introduced.
-
-## Production build
+### Run a production build locally
 
 ```sh
 cd web
@@ -78,16 +40,144 @@ npm run build
 AFTERLIFE_LOCAL_MODE=1 npm run start -- --hostname 127.0.0.1
 ```
 
-Model requests and workspace drafts/logs are restricted to same-origin loopback requests. A public deployment needs an authenticated, owner-scoped storage layer before these local APIs are enabled.
+The explicit local-mode flag permits workspace APIs on the loopback host in production mode. Keep it unset on public deployments.
 
-## Project layout
+## Configuration
 
-- `web/` — Next.js app
-- `data/projects.json` — local snapshot used when Supabase is not configured
-- `data/project-axes.json` — generated Astra map classifications
-- `data/project-briefs.json` — concise project briefs derived from the original write-ups
-- `web/scripts/generate-project-briefs.mjs` — resumable brief generation with source validation
-- `scripts/generate-axes.mjs` — repeatable classifier with ignored response caching
-- `scripts/sync-cognee.mjs` — resumable public archive upload and cloud graph processing
-- `ingest/` — Python data ingestion pipeline
-- `supabase/` — database schema and migrations
+Use [`web/.env.local.example`](web/.env.local.example) as the configuration reference. Never commit credentials. OpenAI, Cognee, and Zero credentials stay server-side and must not use a `NEXT_PUBLIC_` prefix.
+
+| Service | Variables | Purpose |
+| --- | --- | --- |
+| OpenAI | `OPENAI_API_KEY` | Grounded summaries, semantic retrieval, and introduction drafts |
+| Model selection | `OPENAI_CHAT_MODEL`, `OPENAI_RELATIONSHIP_MODEL`, `OPENAI_AXIS_MODEL`, `OPENAI_BRIEF_MODEL` | Override the defaults recorded in the environment example |
+| Cognee Cloud | `COGNEE_API_KEY`, `COGNEE_API_URL`, `COGNEE_DATASET` | Relationship retrieval from the public archive; dataset defaults to `afterlife` |
+| Shared Cognee dataset | `COGNEE_DATASET_ID` | Optional explicit dataset UUID |
+| Cognee timeout | `COGNEE_TIMEOUT_MS` | Defaults to 12 seconds, capped at 30 seconds |
+| Supabase | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Optional database reads and GitHub ownership verification |
+| Zero | `ZERO_DRAFT_ENDPOINT`, `ZERO_API_KEY` | Optional verified draft-forwarding adapter |
+| Site URL | `NEXT_PUBLIC_SITE_URL` | Canonical URLs and social metadata; otherwise uses the Vercel deployment environment or localhost |
+| Telemetry | `COPILOTKIT_TELEMETRY_DISABLED=true` | Disable CopilotKit runtime telemetry |
+
+For Supabase, apply [`supabase/migrations/0001_init.sql`](supabase/migrations/0001_init.sql), enable GitHub OAuth, and configure the app's `/claim` callback URL. Project reads fall back to the bundled snapshot if Supabase is unconfigured or a query fails.
+
+## How the archive works
+
+```text
+Public Devpost projects + linked GitHub repositories
+                         |
+                  data/projects.json
+                         |
+             Next.js pages and 3D map
+                         |
+        Cognee relationship retrieval (optional)
+                         |
+      OpenAI summaries and semantic fallback (optional)
+```
+
+Next.js and React provide the application; Three.js powers the project map. CopilotKit supplies the assistant's tool transport. Cognee retrieves relationships from a scoped archive, and OpenAI produces summaries grounded in the returned evidence. Search reports retrieval provenance separately from whether a model summary succeeded.
+
+Project briefs, map classifications, and impact lenses are generated offline and committed as JSON snapshots. Opening a project or selecting a node does not trigger brief generation.
+
+### Evidence and interpretation
+
+- Source links and original project write-ups remain available alongside the summaries.
+- Repository activity is a dated signal from the ingestion pipeline, not a live guarantee that a project is maintained or abandoned.
+- Map classifications and social impact potential are model inferences from public evidence. Potential and demonstrated impact are shown separately.
+- Builder/project/event links do not establish investment, funding, employment, or willingness to speak.
+- Hidden builders and local discovery opt-outs are excluded from relevant retrieval results and archive syncs.
+
+## Maintain the data
+
+The web app reads the committed snapshots without running ingestion. To refresh source records, use the Python pipeline documented in [`ingest/README.md`](ingest/README.md).
+
+Run the following maintenance commands from the repository root. Generation and cloud sync require the corresponding credentials and can incur API charges.
+
+### Sync the public archive to Cognee
+
+```sh
+node scripts/sync-cognee.mjs --dry-run
+node scripts/sync-cognee.mjs
+node scripts/sync-cognee.mjs --status
+```
+
+Add `--wait` to sync or status to wait for graph processing. Sync resumes from an ignored local manifest and uploads only new or changed public project records. It excludes private claim answers, introduction drafts, hidden builders, and local discovery opt-outs. It does not delete existing tenant data; remove earlier uploads through the tenant's dataset controls when necessary.
+
+The local `GET /api/cognee` endpoint checks authenticated dataset access and reports graph processing progress when available. Dataset access alone does not mean processing is complete. If graph retrieval is unavailable or yields no resolvable archive references, search labels its semantic or local fallback.
+
+### Regenerate project briefs and map lenses
+
+```sh
+node web/scripts/generate-project-briefs.mjs
+node scripts/generate-axes.mjs
+node scripts/generate-impact-lenses.mjs
+```
+
+The brief generator resumes from matching cached results, validates length limits and supporting quotes, and writes `data/project-briefs.json` atomically. Source hashes invalidate briefs when titles, taglines, or descriptions change. Uncached or changed records use a local source-based brief until regeneration.
+
+## Deploy to Vercel
+
+Import this repository and use these project settings:
+
+| Setting | Value |
+| --- | --- |
+| Root Directory | `web` |
+| Framework Preset | Next.js |
+| Install Command | `npm ci` |
+| Build Command | `npm run build` |
+| Output Directory | Leave the Next.js default |
+| Include source files outside of the Root Directory in the Build Step | Enabled |
+
+The app reads `data/` next to `web/`, so the build needs access to files outside its root directory. [`web/next.config.ts`](web/next.config.ts) configures tracing for the bundled public snapshots. See [Vercel's monorepo guidance](https://vercel.com/docs/monorepos/monorepo-faq) for the external-source setting.
+
+Set any required environment variables in the Vercel project settings. A browsing deployment can use the bundled snapshots without API keys. Run the production build locally before deploying; Vercel's Build Logs are the source of truth for a deployment failure.
+
+### Deployment limits
+
+The current public deployment supports archive browsing and project evidence pages. Search/chat, speaker discovery requests, introduction drafting, exports, and local workspace endpoints are protected by same-origin loopback checks and return `403` on public hosts. Adding API keys does not enable those endpoints publicly.
+
+Profiles, drafts, operation logs, and the semantic index currently use ignored files under `data/local/`. A persistent Node.js host needs a persistent volume for this state. Vercel's function filesystem is not a durable store for it. Public interactive workflows require authenticated, owner-scoped persistence and appropriate API access controls before they can be enabled.
+
+Direct Notion export and live event subscriptions are not implemented. Zero forwarding and Supabase ownership verification require their own service configuration.
+
+## Verification
+
+From the repository root:
+
+```sh
+cd web
+node --test scripts/*.test.mjs tests/*.test.mjs
+npm run lint
+npm run build
+```
+
+To verify the production routes, start the server:
+
+```sh
+AFTERLIFE_LOCAL_MODE=1 npm run start -- --hostname 127.0.0.1 --port 3100
+```
+
+Then run in another terminal, from `web/`:
+
+```sh
+QA_BASE_URL=http://127.0.0.1:3100 node tests/routes.mjs
+```
+
+The route check covers the application pages, all bundled project pages, the home redirect, encoded project identifiers, and missing routes. See [`web/QA.md`](web/QA.md) for additional verification notes.
+
+## Repository layout
+
+| Path | Contents |
+| --- | --- |
+| `web/` | Next.js app, UI, API routes, and regression checks |
+| `data/projects.json` | Public project and event snapshot |
+| `data/project-briefs.json` | Generated concise descriptions with source validation |
+| `data/project-axes.json` | Generated map classifications |
+| `data/project-impact.json` | Evidence-backed impact lens data |
+| `scripts/` | Cognee sync and offline map enrichment |
+| `ingest/` | Python Devpost and GitHub ingestion pipeline |
+| `supabase/` | Database schema and migrations |
+| `design/` | Design references and mockups |
+
+## License
+
+The code is available under the [MIT License](LICENSE). Imported project descriptions and third-party assets remain attributable to their original sources; the code license does not grant rights to that source material.

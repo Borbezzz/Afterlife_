@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Afterlife web app
 
-## Getting Started
+The Next.js application for Afterlife, a searchable archive of London hackathon projects and the people behind them. It includes a 3D project map, evidence pages, related-project search, speaker shortlists, and local introduction drafts.
 
-First, run the development server:
+See the [repository README](../README.md) for the product overview, environment variables, data maintenance, and Vercel deployment settings.
 
-```bash
+## Development
+
+From this directory, using Node.js 22.18 or newer:
+
+```sh
+npm ci
+cp .env.local.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [localhost:3000](http://localhost:3000). The home route redirects to `/explore`. The bundled archive in `../data/` works without credentials; optional service configuration is documented in [`.env.local.example`](.env.local.example).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```sh
+npm run build
+AFTERLIFE_LOCAL_MODE=1 npm run start -- --hostname 127.0.0.1
+```
 
-## Learn More
+`AFTERLIFE_LOCAL_MODE=1` is for a loopback production server. Keep it unset on public hosts. Local workspace APIs require same-origin loopback requests; public interactive workflows need authenticated, owner-scoped persistence before being enabled.
 
-To learn more about Next.js, take a look at the following resources:
+## Checks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+node --test scripts/*.test.mjs tests/*.test.mjs
+npm run lint
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+For production route checks and verification details, see [QA.md](QA.md).
 
-## Deploy on Vercel
+## Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Set the project Root Directory to `web`, use the Next.js framework preset, and enable **Include source files outside of the Root Directory in the Build Step** so the app can access `../data/`. Use `npm ci` and `npm run build`, with the default output directory.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Read the [deployment limits](../README.md#deployment-limits) before enabling a public deployment. API credentials alone do not enable the local workspace endpoints on a public host.
